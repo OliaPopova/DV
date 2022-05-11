@@ -1,5 +1,5 @@
 import pandas as pd
-def foo_p5(f4,p2,f2,s1,pr1):
+def foo_p5(s6):
     df_val =list( pd.read_excel(io='2015-2022.xlsx',
                      engine='openpyxl',
                      usecols='O:W',
@@ -9,13 +9,8 @@ def foo_p5(f4,p2,f2,s1,pr1):
     i=1
     list_p1 = []
     while i<9:
-        f4v=f4*(0.936641510963047)**i
-        cp1=-557.8704
-        f2p1v=-1.172828*f2*(1.04188579767041)**i
-        s1p1v=0.116364*s1*(0.969112599877273)**i
-        pr1p1v=0.636084*pr1*(0.997677094531224)**i
-        p2v=p2*(1.00405898684453)**i
-        P5=f4v/(cp1+f2p1v+s1p1v+pr1p1v+p2v)
+        s6v=s6*(1.0427680782803)**i
+        P5=s6v
         list_p1.append(P5)
         i=i+1
 

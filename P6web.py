@@ -176,7 +176,7 @@ app.layout = dbc.Container([
 # create our callback function
 def update_figure(selected_F4,selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6(selected_F4, selected_P2,selected_F2, selected_S1, selected_Pr1)
-    print(df)
+    
     fig = px.bar(data_frame=df, x='года', y='значения',
                  color='года',
                  color_discrete_map={
@@ -201,17 +201,12 @@ def update_figure(selected_F4,selected_P2, selected_F2, selected_S1, selected_Pr
 # create our callback function
 def update_figure(selected_year,selected_F4, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (p2,f2,s1,pr1,p3,s5,s2,s3,f4,ar1,ar2,ar3,p4,f5,f6,s8)
-    df = func(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1, 0, 0, 0,selected_F4 , 0, 0, 0, 0, 0, 0, 0, 0)
+    df = func(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1, 0, 0, 0,selected_F4 , 0, 0, 0, 0, 0, 0, 0, 0,0)
     fig = px.bar(data_frame=df, x='показатель', y='значение', color='показатель', template='plotly')
 
     return (fig)
 
 
-@app.callback(Output('textarea5', 'value'), [Input('F4', 'value')])
-def textarea1input(normv):
-    if normv:
-        textareav = str(normv)
-        return textareav
 
 @app.callback(Output('textarea1', 'value'), [Input('P2', 'value')])
 def textarea1input(normv):
@@ -235,11 +230,17 @@ def textarea3input(normv):
 
 
 @app.callback(Output('textarea4', 'value'), [Input('Pr1', 'value')])
-def textarea1input(normv):
+def textarea4input(normv):
     if normv:
         textareav = str(normv)
         return textareav
 
+
+@app.callback(Output('textarea5', 'value'), [Input('F4', 'value')])
+def textarea5input(normv):
+    if normv:
+        textareav = str(normv)
+        return textareav
 
 if __name__ == '__main__':
     app.run_server(debug=True)

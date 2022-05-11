@@ -10,8 +10,12 @@ def foo_p4_c(p4,p2):
     list_p1 = []
     while i<9:
         p4v=p4*(1.07064878325541)**i
+
         p2v=p2*(1.00405898684453)**i
-        P4_c=p4v/p2v
+        if p2v == 0:
+            P4_c=0
+        else:
+            P4_c=p4v/p2v
         list_p1.append(P4_c)
         i=i+1
 

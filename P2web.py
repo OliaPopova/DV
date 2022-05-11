@@ -181,7 +181,7 @@ def update_figure(selected_P3, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure(selected_year,selected_P3, selected_F2, selected_S1, selected_Pr1):
     # (p2,f2,s1,pr1,p3,s5,s2,s3,f4,ar1,ar2,ar3,p4,f5,f6,s8)
-    df = func(selected_year, selected_P3, selected_F2, selected_S1, selected_Pr1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    df = func(selected_year, selected_P3, selected_F2, selected_S1, selected_Pr1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0)
     fig = px.bar(data_frame=df, x='показатель', y='значение',color='показатель', template='plotly')
 
     return (fig)
@@ -209,7 +209,7 @@ def textarea3input(normv):
 
 
 @app.callback(Output('textarea4', 'value'), [Input('Pr1', 'value')])
-def textarea1input(normv):
+def textarea4input(normv):
     if normv:
         textareav = str(normv)
         return textareav

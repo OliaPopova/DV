@@ -38,26 +38,7 @@ app.layout = dbc.Container([
                     dbc.Container([
                         dbc.Row([
                             html.P(
-                                "F4", id='text5',
-                                className="card-text",
-                                style={'font-size': '16px',
-                                       'font-family': 'Open Sans'}),
-                            dcc.Textarea(id='textarea5', className="textarea", readOnly=True,
-                                         style={}),
-                        ]),
-                        dbc.CardBody([
-                            dcc.Slider(id='F4', value=1000, min=1000, max=150000, step=1, marks=None,
-                                       className="F4slider")])
-                    ], className='container-fluid'),
-
-                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card5'),
-                dbc.Card([
-                    dbc.Container([
-                        dbc.Row([
-                            html.P(
-
-                                "P2", id='text1',
+                                "S6", id='text1',
                                 className="card-text",
                                 style={'font-size': '16px',
                                        'font-family': 'Open Sans'}),
@@ -65,70 +46,12 @@ app.layout = dbc.Container([
                                          style={}),
                         ]),
                         dbc.CardBody([
-                            dcc.Slider(id='P2', value=300, min=300, max=500, step=1, marks=None,
-                                       className="P2slider")])
+                            dcc.Slider(id='S6', value=3000, min=3000, max=6000, step=1, marks=None,
+                                       className="S6slider")])
                     ], className='container-fluid'),
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card1'),
-                dbc.Card([
-                    dbc.Container([
-                        dbc.Row([
-                            html.P(
-                                "F2", id='text2',
-                                className="card-text",
-                                style={'font-size': '16px',
-                                       'font-family': 'Open Sans'}),
-                            dcc.Textarea(id='textarea2', className="textarea", readOnly=True,
-                                         style={}),
-
-                        ]),
-                        dbc.CardBody([
-                            dcc.Slider(id='F2', value=400, min=400, max=750, step=1, marks=None,
-                                       className="F2slider")])
-                    ], className='container-fluid')
-
-                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card2'),
-                dbc.Card([
-                    dbc.Container([
-                        dbc.Row([
-                            html.P(
-                                "S1", id='text3',
-                                className="card-text",
-                                style={'font-size': '16px',
-                                       'font-family': 'Open Sans'}),
-                            dcc.Textarea(id='textarea3', className="textarea", readOnly=True,
-                                         style={})
-                        ]),
-
-                    ], className='container-fluid'),
-                    dbc.CardBody([
-                        dcc.Slider(id='S1', value=20000, min=20000, max=30000, step=1, marks=None,
-                                   className="S1slider")]),
-
-                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card3'),
-                dbc.Card([
-                    dbc.Container([
-                        dbc.Row([
-                            html.P(
-                                "Pr1", id='text4',
-                                className="card-text",
-                                style={'font-size': '16px',
-                                       'font-family': 'Open Sans'}),
-                            dcc.Textarea(id='textarea4', className="textarea", readOnly=True,
-                                         style={})
-                        ]),
-
-                    ], className='container-fluid'),
-                    dbc.CardBody([
-                        dcc.Slider(id='Pr1', value=140, min=140, max=250, step=1, marks=None,
-                                   className="Pr1slider")]),
-
-                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card4'),
-
+                    id='card5'),
             ], align="center"),
 
         ], width={'size': 12}),
@@ -168,15 +91,11 @@ app.layout = dbc.Container([
 
 @app.callback(
     Output('fig1', 'figure'),
-    [Input('F4', 'value'),
-     Input('P2', 'value'),
-     Input('F2', 'value'),
-     Input('S1', 'value'),
-     Input('Pr1', 'value')])
+    [Input('S6', 'value')])
 # create our callback function
-def update_figure(selected_F4,selected_P2, selected_F2, selected_S1, selected_Pr1):
-    df = foo_p5(selected_F4, selected_P2,selected_F2, selected_S1, selected_Pr1)
-    print(df)
+def update_figure(selected_S6):
+    df = foo_p5(selected_S6)
+
     fig = px.bar(data_frame=df, x='года', y='значения',
                  color='года',
                  color_discrete_map={
@@ -193,53 +112,23 @@ def update_figure(selected_F4,selected_P2, selected_F2, selected_S1, selected_Pr
 @app.callback(
     Output('fig2', 'figure'),
     [Input('dropdown', 'value'),
-     Input('F4', 'value'),
-     Input('P2', 'value'),
-     Input('F2', 'value'),
-     Input('S1', 'value'),
-     Input('Pr1', 'value')])
+     Input('S6', 'value'),
+     ])
 # create our callback function
-def update_figure(selected_year,selected_F4, selected_P2, selected_F2, selected_S1, selected_Pr1):
-    # (p2,f2,s1,pr1,p3,s5,s2,s3,f4,ar1,ar2,ar3,p4,f5,f6,s8)
-    df = func(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1, 0, 0, 0,selected_F4 , 0, 0, 0, 0, 0, 0, 0, 0)
+def update_figure(selected_year,selected_S6):
+    # (p2,f2,s1,pr1,p3,s5,s2,s3,f4,ar1,ar2,ar3,p4,f5,f6,s8,s6)
+    df = func(selected_year, 0, 0, 0, 0, 0, 0, 0,0 , 0, 0, 0, 0, 0, 0, 0, 0,selected_S6)
     fig = px.bar(data_frame=df, x='показатель', y='значение', color='показатель', template='plotly')
 
     return (fig)
 
 
-@app.callback(Output('textarea5', 'value'), [Input('F4', 'value')])
-def textarea1input(normv):
+
+@app.callback(Output('textarea1', 'value'), [Input('S6', 'value')])
+def textarea5input(normv):
     if normv:
         textareav = str(normv)
         return textareav
-
-@app.callback(Output('textarea1', 'value'), [Input('P2', 'value')])
-def textarea1input(normv):
-    if normv:
-        textareav = str(normv)
-        return textareav
-
-
-@app.callback(Output('textarea2', 'value'), [Input('F2', 'value')])
-def textarea2input(normv):
-    if normv:
-        textareav = str(normv)
-        return textareav
-
-
-@app.callback(Output('textarea3', 'value'), [Input('S1', 'value')])
-def textarea3input(normv):
-    if normv:
-        textareav = str(normv)
-        return textareav
-
-
-@app.callback(Output('textarea4', 'value'), [Input('Pr1', 'value')])
-def textarea1input(normv):
-    if normv:
-        textareav = str(normv)
-        return textareav
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
