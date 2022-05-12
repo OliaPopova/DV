@@ -14,7 +14,7 @@ from P6_c import foo_p6_c
 from P7_c import foo_p7_c
 from P8_c import foo_p8_c
 
-def func(year,p2,f2,s1,pr1,p3,s5,s2,s3,f4,ar1,ar2,ar3,p4,f5,f6,s8,s6):
+def func(year,p2,p3,p4,f2,f4,f5,f6,s1,s2,s3,s5,s6,s8,pr1,ar1,ar2,ar3):
     dfp1 = foo_p1(p2, f2, s1, pr1)
     dfp2 = foo_p2(p3, f2, s1, pr1)
     dfp3 = foo_p3(s5, s2, s3, p2, f2, s1, pr1)

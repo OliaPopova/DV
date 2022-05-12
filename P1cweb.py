@@ -1,8 +1,7 @@
 import dash
 import numpy
 import plotly.graph_objects as go
-from P2 import foo_p2
-
+from P1_c import foo_p1_c
 from allgraph import func
 from dash import dcc, no_update
 from dash import html
@@ -27,7 +26,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col(
             html.P(
-                "P2",
+                "P1_c",
                 style={'font-size': '26px', 'font-weight': 'normal',
                        'font-family': 'Open Sans', 'color': 'white'}, id='dashname'),
             width={"size": 10, "offset": 2})
@@ -39,8 +38,7 @@ app.layout = dbc.Container([
                     dbc.Container([
                         dbc.Row([
                             html.P(
-
-                                "P3", id='text1',
+                                "P2", id='text1',
                                 className="card-text",
                                 style={'font-size': '16px',
                                        'font-family': 'Open Sans'}),
@@ -48,8 +46,8 @@ app.layout = dbc.Container([
                                          style={}),
                         ]),
                         dbc.CardBody([
-                            dcc.Slider(id='P3', value=500, min=500, max=750, step=1, marks=None,
-                                       className="P3slider")])
+                            dcc.Slider(id='P2', value=300, min=300, max=500, step=1, marks=None,
+                                       className="P2slider")])
                     ], className='container-fluid'),
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
@@ -111,6 +109,25 @@ app.layout = dbc.Container([
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
                     id='card4'),
+                dbc.Card([
+                    dbc.Container([
+                        dbc.Row([
+                            html.P(
+                                "Ar1", id='text5',
+                                className="card-text",
+                                style={'font-size': '16px',
+                                       'font-family': 'Open Sans'}),
+                            dcc.Textarea(id='textarea5', className="textarea", readOnly=True,
+                                         style={}),
+
+                        ]),
+                        dbc.CardBody([
+                            dcc.Slider(id='Ar1', value=0, min=0, max=500, step=1, marks=None,
+                                       className="Ar1slider")])
+                    ], className='container-fluid')
+
+                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
+                    id='card5'),
 
             ], align="center"),
 
@@ -130,7 +147,7 @@ app.layout = dbc.Container([
 
     ], style={'background-color': '#323436'}),
     dcc.Dropdown(
-        ['2023','2024','2025','2026','2027','2028','2029','2030'], '2023', id='dropdown'
+        ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023', id='dropdown'
     ),
 
     dbc.Row([
@@ -151,14 +168,15 @@ app.layout = dbc.Container([
 
 @app.callback(
     Output('fig1', 'figure'),
-    [Input('P3', 'value'),
+    [Input('Ar1', 'value'),
+     Input('P2', 'value'),
      Input('F2', 'value'),
      Input('S1', 'value'),
      Input('Pr1', 'value')])
 # create our callback function
-def update_figure(selected_P3, selected_F2, selected_S1, selected_Pr1):
-    #(p3,f2,s1,pr1)
-    df = foo_p2(selected_P3, selected_F2, selected_S1, selected_Pr1)
+def update_figure(selected_Ar1,selected_P2, selected_F2, selected_S1, selected_Pr1):
+    #(ar1,p2,f2,s1,pr1)
+    df = foo_p1_c(selected_Ar1,selected_P2, selected_F2, selected_S1, selected_Pr1)
     fig = px.bar(data_frame=df, x='года', y='значения',
                  color='года',
                  color_discrete_map={
@@ -175,19 +193,21 @@ def update_figure(selected_P3, selected_F2, selected_S1, selected_Pr1):
 @app.callback(
     Output('fig2', 'figure'),
     [Input('dropdown', 'value'),
-     Input('P3', 'value'),
+     Input('Ar1', 'value'),
+     Input('P2', 'value'),
      Input('F2', 'value'),
      Input('S1', 'value'),
      Input('Pr1', 'value')])
 # create our callback function
-def update_figure(selected_year,selected_P3, selected_F2, selected_S1, selected_Pr1):
-    # (year,p2,p3,p4,f2,f4,f5,f6,s1,s2,s3,s5,s6,s8,pr1,ar1,ar2,ar3)
-    df = func(selected_year, 0,selected_P3,0,selected_F2, 0, 0, 0, selected_S1, 0, 0, 0, 0, 0, selected_Pr1, 0, 0,0)
-    fig = px.bar(data_frame=df, x='показатель', y='значение',color='показатель', template='plotly')
+def update_figure(selected_year, selected_Ar1, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    # func(year,p2,p3,p4,f2,f4,f5,f6,s1,s2,s3,s5,s6,s8,pr1,ar1,ar2,ar3)
+    df = func(selected_year, selected_P2,0,0,selected_F2,0,0,0,selected_S1,0,0,0,0,0,selected_Pr1,selected_Ar1,0,0)
+    fig = px.bar(data_frame=df, x='показатель', y='значение', color='показатель', template='plotly')
+
     return (fig)
 
 
-@app.callback(Output('textarea1', 'value'), [Input('P3', 'value')])
+@app.callback(Output('textarea1', 'value'), [Input('P2', 'value')])
 def textarea1input(normv):
     if normv:
         textareav = str(normv)
@@ -214,6 +234,11 @@ def textarea4input(normv):
         textareav = str(normv)
         return textareav
 
+@app.callback(Output('textarea5', 'value'), [Input('Ar1', 'value')])
+def textarea4input(normv):
+    if normv:
+        textareav = str(normv)
+        return textareav
 
 if __name__ == '__main__':
     app.run_server(debug=True)
