@@ -19,8 +19,15 @@
     width: 10%;
 }
 
+
+
+
 #fig2 .main-svg  {
     border-radius: 20px
+}
+
+#fig3 .bglayer{
+border-radius: 60px
 }
 #fig2{
 margin: 0% 0% 3% 0%;
@@ -44,20 +51,12 @@ background: linear-gradient(
     margin: 3px 3px 3px 0px;
 
 }
-#P2.P2slider {
+
+
+.slider {
 padding: 0% !important;
 }
 
-#F2.F2slider {
-padding: 0% !important;
-}
-#S1.S1slider {
-padding: 0% !important;
-}
-
-#Pr1.Pr1slider {
-padding: 0% !important;
-}
 
 #card1.card{
     margin-top: 2%;
@@ -82,13 +81,30 @@ padding: 0% !important;
 
 }
 #card4.card{
-    margin-top: 7%;
+    margin-top: 2%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-left: 11%;
+    background: #515151;
+
+}
+#card5.card{
+    margin-top: 2%;
+    margin-right: 0px;
+    margin-bottom: 1%;
+    margin-left: 0px;
+    background: #515151;
+}
+
+#card6.card{
+    margin-top: 2%;
     margin-right: 11%;
     margin-bottom: 1%;
     margin-left: 1%;
     background: #515151;
 
 }
+
 #textarea3.textarea{
  width: 58px !important;
 }

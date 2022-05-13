@@ -26,7 +26,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col(
             html.P(
-                "P3_c",
+                "P5_c",
                 style={'font-size': '26px', 'font-weight': 'normal',
                        'font-family': 'Open Sans', 'color': 'white'}, id='dashname'),
             width={"size": 10, "offset": 2})

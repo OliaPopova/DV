@@ -28,3 +28,18 @@ def foo_p6(f4,p2,f2,s1,pr1):
     df_marks = pd.DataFrame(mydictionary)
 
     return df_marks
+
+
+
+def foo_p6_v(year,f4,p2,f2,s1,pr1):
+    df = foo_p6(f4,p2,f2,s1,pr1)
+    df_val = list(df[df['года'] == '2022'].squeeze())
+    val22=float(df_val[1])
+    listval = list(df[df['года'] == year].squeeze())
+    val=float(listval[1])
+    mydict = {
+        'года': ['2022', year],
+        'значения': [val22, val]
+    }
+    mydf = pd.DataFrame(mydict)
+    return mydf

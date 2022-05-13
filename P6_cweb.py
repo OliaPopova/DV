@@ -1,7 +1,7 @@
 import dash
 import numpy
 import plotly.graph_objects as go
-from P8_c import foo_p8_c
+from P6_c import foo_p6_c
 from allgraph import func
 from dash import dcc, no_update
 from dash import html
@@ -26,7 +26,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col(
             html.P(
-                "P1",
+                "P6_c",
                 style={'font-size': '26px', 'font-weight': 'normal',
                        'font-family': 'Open Sans', 'color': 'white'}, id='dashname'),
             width={"size": 10, "offset": 2})
@@ -113,21 +113,22 @@ app.layout = dbc.Container([
                     dbc.Container([
                         dbc.Row([
                             html.P(
-                                "S8", id='text5',
+                                "F6", id='text5',
                                 className="card-text",
                                 style={'font-size': '16px',
                                        'font-family': 'Open Sans'}),
                             dcc.Textarea(id='textarea5', className="textarea", readOnly=True,
-                                         style={})
-                        ]),
+                                         style={}),
 
-                    ], className='container-fluid'),
-                    dbc.CardBody([
-                        dcc.Slider(id='S8', value=50, min=50, max=200, step=1, marks=None,
-                                   className="S8slider")]),
+                        ]),
+                        dbc.CardBody([
+                            dcc.Slider(id='F6', value=1000, min=1000, max=9000, step=1, marks=None,
+                                       className="F6slider")])
+                    ], className='container-fluid')
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
                     id='card5'),
+
             ], align="center"),
 
         ], width={'size': 12}),
@@ -169,12 +170,13 @@ app.layout = dbc.Container([
     Output('fig1', 'figure'),
     [Input('Pr1', 'value'),
      Input('S1', 'value'),
-     Input('S8', 'value'),
+     Input('F6', 'value'),
      Input('F2', 'value'),
      Input('P2', 'value')])
 # create our callback function
-def update_figure(selected_Pr1, selected_S1, selected_S8, selected_F2, selected_P2):
-    df = foo_p8_c(selected_Pr1, selected_S1, selected_S8, selected_F2, selected_P2)
+def update_figure(selected_Pr1,selected_S1, selected_F6, selected_F2, selected_P2):
+    #(pr1,s1,f6,f2,p2)
+    df = foo_p6_c(selected_Pr1,selected_S1, selected_F6, selected_F2, selected_P2)
     fig = px.bar(data_frame=df, x='года', y='значения',
                  color='года',
                  color_discrete_map={
@@ -193,13 +195,13 @@ def update_figure(selected_Pr1, selected_S1, selected_S8, selected_F2, selected_
     [Input('dropdown', 'value'),
      Input('Pr1', 'value'),
      Input('S1', 'value'),
-     Input('S8', 'value'),
+     Input('F6', 'value'),
      Input('F2', 'value'),
      Input('P2', 'value')])
 # create our callback function
-def update_figure(selected_year, selected_Pr1, selected_S1, selected_S8, selected_F2, selected_P2):
+def update_figure(selected_year, selected_Pr1, selected_S1, selected_F6, selected_F2, selected_P2):
     # (year,p2,p3,p4,f2,f4,f5,f6,s1,s2,s3,s5,s6,s8,pr1,ar1,ar2,ar3)
-    df = func(selected_year, selected_P2, 0, 0, selected_F2, 0, 0, 0, selected_S1, 0, 0, 0, 0, selected_S8, selected_Pr1, 0, 0, 0)
+    df = func(selected_year, selected_P2, 0, 0, selected_F2, 0, 0, selected_F6, selected_S1, 0, 0, 0, 0, 0,selected_Pr1,0,0,0)
     fig = px.bar(data_frame=df, x='показатель', y='значение', color='показатель', template='plotly')
 
     return (fig)
@@ -232,13 +234,11 @@ def textarea4input(normv):
         textareav = str(normv)
         return textareav
 
-
-@app.callback(Output('textarea5', 'value'), [Input('S8', 'value')])
+@app.callback(Output('textarea5', 'value'), [Input('F6', 'value')])
 def textarea5input(normv):
     if normv:
         textareav = str(normv)
         return textareav
-
 
 if __name__ == '__main__':
     app.run_server(debug=True)
