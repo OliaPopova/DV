@@ -35,3 +35,18 @@ def foo_p7_c(pr1,s1,s2,s3,f2,p2):
     df_marks = pd.DataFrame(mydictionary)
 
     return df_marks
+
+
+def foo_p7_cv(year,pr1,s1,s2,s3,f2,p2):
+    df=foo_p7_c(pr1,s1,s2,s3,f2,p2)
+    df_val = list(df[df['года'] == '2022'].squeeze())
+    val22 = float(df_val[1])
+    listval = list(df[df['года'] == year].squeeze())
+    val = float(listval[1])
+    mydict = {
+        'года': ['2022', year],
+        'значения': [val22, val]
+    }
+    mydf = pd.DataFrame(mydict)
+    return mydf
+
