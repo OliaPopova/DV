@@ -49,5 +49,4 @@ def foo_p8_cv(year,pr1,s1,s8,f2,p2):
         'значения': [val22, val]
     }
     mydf = pd.DataFrame(mydict)
-    print(mydf)
     return mydf

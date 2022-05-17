@@ -73,19 +73,6 @@ app.layout = dbc.Container([
         ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023', id='dropdown'
     ),
 
-    dbc.Row([
-        dbc.Col(
-            html.Div([
-                dcc.Graph(id='fig2', config={
-                    'staticPlot': False,  # True, False
-                    'displayModeBar': False,  # True, False, 'hover'
-                    'watermark': True,
-                }, )
-            ], className='fig2')
-        )
-
-    ], style={'background-color': '#323436'}),
-
 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
 
 
@@ -107,22 +94,6 @@ def update_figure(selected_S6):
                      '2025': '#b0d9ff'}, template='plotly')
 
     return (fig)
-
-
-@app.callback(
-    Output('fig2', 'figure'),
-    [Input('dropdown', 'value'),
-     Input('S6', 'value'),
-     ])
-# create our callback function
-def update_figure(selected_year,selected_S6):
-    # (year,p2,p3,p4,f2,f4,f5,f6,s1,s2,s3,s5,s6,s8,pr1,ar1,ar2,ar3)
-    df = func(selected_year, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,selected_S6 , 0, 0, 0, 0,0)
-    fig = px.bar(data_frame=df, x='показатель', y='значение', color='показатель', template='plotly')
-
-    return (fig)
-
-
 
 @app.callback(Output('textarea1', 'value'), [Input('S6', 'value')])
 def textarea1input(normv):

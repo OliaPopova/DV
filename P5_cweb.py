@@ -1,7 +1,20 @@
 import dash
 import numpy
 import plotly.graph_objects as go
+from P1 import foo_p1_v
+from P1_c import foo_p1_cv
+from P2 import foo_p2_v
+from P2_c import foo_p2_cv
+from P3 import foo_p3_v
+from P3_c import foo_p3_cv
+from P4 import foo_p4_v
+from P4_c import foo_p4_cv
 from P5_c import foo_p5_c
+from P6 import foo_p6_v
+from P6_c import foo_p6_cv
+from P7_c import foo_p7_cv
+from P8_c import foo_p8_cv
+
 from allgraph import func
 from dash import dcc, no_update
 from dash import html
@@ -146,20 +159,111 @@ app.layout = dbc.Container([
         )
 
     ], style={'background-color': '#323436'}),
-    dcc.Dropdown(
-        ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023', id='dropdown'
-    ),
+    dbc.Row([
+        dcc.Dropdown(
+            ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023', clearable=False, id='dropdown',
+            style={"width": "70px", "height": "40px"}),
+    ], style={'background-color': '#323436'}),
+    dbc.Row([
+        html.Div([
+            dcc.Graph(id='fig2', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+        html.Div([
+            dcc.Graph(id='fig3', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+        html.Div([
+            dcc.Graph(id='fig4', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+        html.Div([
+            dcc.Graph(id='fig5', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+        html.Div([
+            dcc.Graph(id='fig6', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+    ], style={'background-color': '#323436'}),
 
     dbc.Row([
-        dbc.Col(
-            html.Div([
-                dcc.Graph(id='fig2', config={
-                    'staticPlot': False,  # True, False
-                    'displayModeBar': False,  # True, False, 'hover'
-                    'watermark': True,
-                }, )
-            ], className='fig2')
-        )
+        html.Div([
+            dcc.Graph(id='fig7', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+        html.Div([
+            dcc.Graph(id='fig8', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+        html.Div([
+            dcc.Graph(id='fig9', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+        html.Div([
+            dcc.Graph(id='fig10', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+        html.Div([
+            dcc.Graph(id='fig11', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+    ], style={'background-color': '#323436'}),
+
+    dbc.Row([
+        html.Div([
+            dcc.Graph(id='fig12', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+
+        html.Div([
+            dcc.Graph(id='fig13', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
 
     ], style={'background-color': '#323436'}),
 
@@ -193,17 +297,225 @@ def update_figure(selected_F5,selected_P2, selected_F2, selected_S1, selected_Pr
 @app.callback(
     Output('fig2', 'figure'),
     [Input('dropdown', 'value'),
-     Input('F5', 'value'),
      Input('P2', 'value'),
      Input('F2', 'value'),
      Input('S1', 'value'),
      Input('Pr1', 'value')])
 # create our callback function
-def update_figure(selected_year, selected_F5,selected_P2, selected_F2, selected_S1, selected_Pr1):
-    # (year,p2,p3,p4,f2,f4,f5,f6,s1,s2,s3,s5,s6,s8,pr1,ar1,ar2,ar3)
-    df = func(selected_year, selected_P2, 0, 0, selected_F2, 0, selected_F5, 0, selected_S1, 0, 0, 0, 0, 0, selected_Pr1, 0, 0, 0)
-    fig = px.bar(data_frame=df, x='показатель', y='значение', color='показатель', template='plotly')
+def update_figure_p1(selected_year,selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p1_v(selected_year,selected_P2, selected_F2, selected_S1, selected_Pr1)
+    fig = px.bar(data_frame=df, x='года', y='значения',
+                 color='года', template='plotly', title='P1')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
 
+@app.callback(
+    Output('fig3', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
+
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P2')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+@app.callback(
+    Output('fig4', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
+
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P3')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+
+@app.callback(
+    Output('fig5', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p4_v(selected_year,selected_P2, selected_F2, selected_S1, selected_Pr1)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P4')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+
+@app.callback(
+    Output('fig6', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P6')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+
+@app.callback(
+    Output('fig7', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P1_c')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+
+@app.callback(
+    Output('fig8', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P2_c')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+
+@app.callback(
+    Output('fig9', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P3_c')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+
+@app.callback(
+    Output('fig10', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value')])
+# create our callback function
+def update_figure_p4_с(selected_year, selected_P2):
+    df = foo_p4_cv(selected_year, 400, selected_P2)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P4_c')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+@app.callback(
+    Output('fig11', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P6_c')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+
+@app.callback(
+    Output('fig12', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P7_c')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
+    return (fig)
+
+
+@app.callback(
+    Output('fig13', 'figure'),
+    [Input('dropdown', 'value'),
+     Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+# create our callback function
+def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
+    #(year,pr1,s1,s8,f2,p2)
+    df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
+    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P8_c')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(showlegend=False)
     return (fig)
 
 

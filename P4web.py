@@ -312,11 +312,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(showlegend=False)
     return (fig)
 
-
-
-
 @app.callback(
-    Output('fig3', 'figure'),
+    Output('fig4', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value'),
      Input('F2', 'value'),
