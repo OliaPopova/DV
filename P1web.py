@@ -259,6 +259,23 @@ app.layout = dbc.Container([
 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
 
 
+
+@app.callback(
+    Output('fig1', 'figure'),
+    [Input('P2', 'value'),
+     Input('F2', 'value'),
+     Input('S1', 'value'),
+     Input('Pr1', 'value')])
+def values(selected_P2, selected_F2, selected_S1, selected_Pr1):
+    # (selected_P2, selected_P3, selected_P4,
+    #  selected_F2, selected_F4, selected_F5, selected_F6,
+    #  selected_S1, selected_S2, selected_S3, selected_S5, selected_S6, selected_S8,
+    #  selected_Pr1, selected_Ar1, selected_Ar2, selected_Ar3)
+    func(selected_P2,0,0,
+         selected_F2,0,0,0,
+         selected_S1,0,0,0,0,0,
+         selected_Pr1,0,0,0)
+
 @app.callback(
     Output('fig1', 'figure'),
     [Input('P2', 'value'),
@@ -267,6 +284,7 @@ app.layout = dbc.Container([
      Input('Pr1', 'value')])
 # create our callback function
 def update_figure(selected_P2, selected_F2, selected_S1, selected_Pr1):
+
     df = foo_p1(selected_P2, selected_F2, selected_S1, selected_Pr1)
     fig = px.bar(data_frame=df, x='года', y='значения',
                  color='года', template='plotly', title='P1')
