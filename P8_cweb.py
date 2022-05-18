@@ -688,7 +688,7 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
-                     '2028': '#E4FC8F', '2029': '#E4FC8F', '2030': '#E4FC8F'}
+                     '2028': '#E4FC8F', '2029': '#E4FC8F', '2030': '#E4FC8F' }
                  )
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
