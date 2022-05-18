@@ -22,8 +22,8 @@ def foo_p2_c(ar2,p2,f2,s1,pr1):
     df_val = df_val + list_p1
 
     mydictionary = {
-                'года': ['2015','2016','2017','2018','2019','2020','2021', '2022', '2023','2024', '2025', '2026', '2027', '2028', '2029','2030'],
-                'значения':df_val
+                'год': ['2015','2016','2017','2018','2019','2020','2021', '2022', '2023','2024', '2025', '2026', '2027', '2028', '2029','2030'],
+                'значение':df_val
                     }
     df_marks = pd.DataFrame(mydictionary)
 
@@ -32,13 +32,13 @@ def foo_p2_c(ar2,p2,f2,s1,pr1):
 
 def foo_p2_cv(year,ar2,p2,f2,s1,pr1):
     df=foo_p2_c(ar2,p2,f2,s1,pr1)
-    df_val = list(df[df['года'] == '2022'].squeeze())
+    df_val = list(df[df['год'] == '2022'].squeeze())
     val22 = float(df_val[1])
-    listval = list(df[df['года'] == year].squeeze())
+    listval = list(df[df['год'] == year].squeeze())
     val = float(listval[1])
     mydict = {
-        'года': ['2022', year],
-        'значения': [val22, val]
+        'год': ['2022', year],
+        'значение': [val22, val]
     }
     mydf = pd.DataFrame(mydict)
     return mydf

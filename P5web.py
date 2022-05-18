@@ -51,7 +51,7 @@ app.layout = dbc.Container([
                     ], className='container-fluid'),
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card5'),
+                    id='card1P5'),
             ], align="center"),
 
         ], width={'size': 12}),
@@ -65,13 +65,11 @@ app.layout = dbc.Container([
                     'displayModeBar': False,  # True, False, 'hover'
                     'watermark': True,
                 }, )
-            ], className='fig1')
+            ], className='figosn')
         )
 
     ], style={'background-color': '#323436'}),
-    dcc.Dropdown(
-        ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023', id='dropdown'
-    ),
+
 
 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
 
@@ -83,16 +81,23 @@ app.layout = dbc.Container([
 def update_figure(selected_S6):
     # (s6)
     df = foo_p5(selected_S6)
-    fig = px.bar(data_frame=df, x='года', y='значения',
-                 color='года',
-                 color_discrete_map={
-                     '2020': '#2dbfcf',
-                     '2021': '#1fad94',
-                     '2022': '#148e95',
-                     '2023': '#0068b4',
-                     '2024': '#309ec1',
-                     '2025': '#b0d9ff'}, template='plotly')
-
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2s', template='plotly', title='P1')
+    fig.update_layout(xaxis_title=None,
+                      yaxis_title=None,
+                      plot_bgcolor='#515151',
+                      paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_traces(marker_color='#83C3FF')
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
+    fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 @app.callback(Output('textarea1', 'value'), [Input('S6', 'value')])

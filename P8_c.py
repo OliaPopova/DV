@@ -21,8 +21,11 @@ def foo_p8_c(pr1,s1,s8,f2,p2):
         cs10=349.0697
         p1s10=-0.137595*p1
         cs4=9491.33
-        p1s4=-7.698679*p1
-        p2s4=-1.419868*p2*(1.00405898684453)**i
+
+        p1s4=-1.419868*p1
+
+        p2s4=-7.698679*p2*(1.00405898684453)**i
+
         cs7=1153.679
         p2s7=-0.416872*p2*(1.00405898684453)**i
         P8_c=(s8v+cs9+p1s9+cs10+p1s10)/(cs4+p1s4+p2s4+cs7+p2s7)
@@ -32,21 +35,21 @@ def foo_p8_c(pr1,s1,s8,f2,p2):
     df_val = df_val + list_p1
 
     mydictionary = {
-                'года': ['2015','2016','2017','2018','2019','2020','2021', '2022', '2023','2024', '2025', '2026', '2027', '2028', '2029','2030'],
-                'значения':df_val
+                'год': ['2015','2016','2017','2018','2019','2020','2021', '2022', '2023','2024', '2025', '2026', '2027', '2028', '2029','2030'],
+                'значение':df_val
                     }
     df_marks = pd.DataFrame(mydictionary)
     return df_marks
 
 def foo_p8_cv(year,pr1,s1,s8,f2,p2):
     df=foo_p8_c(pr1,s1,s8,f2,p2)
-    df_val = list(df[df['года'] == '2022'].squeeze())
+    df_val = list(df[df['год'] == '2022'].squeeze())
     val22 = float(df_val[1])
-    listval = list(df[df['года'] == year].squeeze())
+    listval = list(df[df['год'] == year].squeeze())
     val = float(listval[1])
     mydict = {
-        'года': ['2022', year],
-        'значения': [val22, val]
+        'год': ['2022', year],
+        'значение': [val22, val]
     }
     mydf = pd.DataFrame(mydict)
     return mydf

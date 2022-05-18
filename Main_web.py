@@ -1,21 +1,28 @@
-import dash_bootstrap_components as dbc
-import dash
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
-                meta_tags=[{'name': 'viewport',
-                            'content': 'width=device-width, initial-scale=1.0'}]
-                )
-server = app.server
+from dash import Dash, dcc, html, Input, Output, callback
 
-app.layout =  dbc.Nav(
-    [
-        dbc.NavItem(dbc.NavLink("Active", active=True, href="file:///D:\Job_projects\PY_dv\P1web.py")),
-        #D:\Job_projects\PY_dv
-        dbc.NavItem(dbc.NavLink("A link", href="#")),
-        dbc.NavItem(dbc.NavLink("Another link", href="#")),
-        dbc.NavItem(dbc.NavLink("Disabled", disabled=True, href="#")),
-    ],
-    vertical="md",
-)
+app = Dash(__name__, suppress_callback_exceptions=True)
+
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
+
+
+index_page = html.Div([
+    dcc.Link('Go to Page 1', href='/P1web.py'),
+    html.Br(),
+    dcc.Link('Go to Page 2', href='/P2web.py'),
+])
+
+page_1_layout = html.Div([
+    html.H1('Page 1'),
+    dcc.Dropdown(['LA', 'NYC', 'MTL'], 'LA', id='page-1-dropdown'),
+    html.Div(id='page-1-content'),
+    html.Br(),
+    dcc.Link('Go to Page 2', href='/P2web.py'),
+    html.Br(),
+    dcc.Link('Go back to home', href='/'),
+])
 
 if __name__ == '__main__':
     app.run_server(debug=True)

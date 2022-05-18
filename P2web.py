@@ -21,7 +21,6 @@ from dash.dependencies import Output, Input
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
-
 # git commit -m "Demo"
 # git push heroku main
 # heroku ps:scale web=1
@@ -64,7 +63,8 @@ app.layout = dbc.Container([
                     ], className='container-fluid'),
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card1'),
+                    # тоже 4 карточки как на P1
+                    id='card1webP1'),
                 dbc.Card([
                     dbc.Container([
                         dbc.Row([
@@ -83,46 +83,48 @@ app.layout = dbc.Container([
                     ], className='container-fluid')
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card2'),
-                dbc.Card([
-                    dbc.Container([
-                        dbc.Row([
-                            html.P(
-                                "S1", id='text3',
-                                className="card-text",
-                                style={'font-size': '16px',
-                                       'font-family': 'Open Sans'}),
-                            dcc.Textarea(id='textarea3', className="textarea", readOnly=True,
-                                         style={})
-                        ]),
+                    id='card2webP1'),
 
-                    ], className='container-fluid'),
-                    dbc.CardBody([
-                        dcc.Slider(id='S1', value=20000, min=20000, max=30000, step=1, marks=None,
-                                   className="S1slider")]),
+                dbc.Row([
+                    dbc.Card([
+                        dbc.Container([
+                            dbc.Row([
+                                html.P(
+                                    "S1", id='text3',
+                                    className="card-text",
+                                    style={'font-size': '16px',
+                                           'font-family': 'Open Sans'}),
+                                dcc.Textarea(id='textarea3', className="textarea", readOnly=True,
+                                             style={})
+                            ]),
 
-                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card3'),
-                dbc.Card([
-                    dbc.Container([
-                        dbc.Row([
-                            html.P(
-                                "Pr1", id='text4',
-                                className="card-text",
-                                style={'font-size': '16px',
-                                       'font-family': 'Open Sans'}),
-                            dcc.Textarea(id='textarea4', className="textarea", readOnly=True,
-                                         style={})
-                        ]),
+                        ], className='container-fluid'),
+                        dbc.CardBody([
+                            dcc.Slider(id='S1', value=20000, min=20000, max=30000, step=1, marks=None,
+                                       className="S1slider")]),
 
-                    ], className='container-fluid'),
-                    dbc.CardBody([
-                        dcc.Slider(id='Pr1', value=140, min=140, max=250, step=1, marks=None,
-                                   className="Pr1slider")]),
+                    ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
+                        id='card3webP1'),
+                    dbc.Card([
+                        dbc.Container([
+                            dbc.Row([
+                                html.P(
+                                    "Pr1", id='text4',
+                                    className="card-text",
+                                    style={'font-size': '16px',
+                                           'font-family': 'Open Sans'}),
+                                dcc.Textarea(id='textarea4', className="textarea", readOnly=True,
+                                             style={})
+                            ]),
 
-                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                    id='card4'),
+                        ], className='container-fluid'),
+                        dbc.CardBody([
+                            dcc.Slider(id='Pr1', value=140, min=140, max=250, step=1, marks=None,
+                                       className="Pr1slider")]),
 
+                    ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
+                        id='card4webP1'),
+                ]),
             ], align="center"),
 
         ], width={'size': 12}),
@@ -136,16 +138,20 @@ app.layout = dbc.Container([
                     'displayModeBar': False,  # True, False, 'hover'
                     'watermark': True,
                 }, )
-            ], className='fig1')
+            ], className='figosn')
         )
 
     ], style={'background-color': '#323436'}),
 
     dbc.Row([
-        dcc.Dropdown(
-            ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023', clearable=False, id='dropdown',
-            style={"width": "70px", "height": "40px"}),
-    ], style={'background-color': '#323436'}),
+        html.Div([
+            dcc.Dropdown(
+                ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023', searchable=False,
+                clearable=False,
+                id='dropdown',
+                style={"width": "70px", "height": "40px"}),
+        ], style={"width": "50%"}),
+    ], id='dropdownrow', style={'background-color': '#323436'}),
     dbc.Row([
         html.Div([
             dcc.Graph(id='fig2', config={
@@ -253,18 +259,25 @@ app.layout = dbc.Container([
      Input('Pr1', 'value')])
 # create our callback function
 def update_figure(selected_P3, selected_F2, selected_S1, selected_Pr1):
-    #(p3,f2,s1,pr1)
+    # (p3,f2,s1,pr1)
     df = foo_p2(selected_P3, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='года', y='значения',
-                 color='года',
-                 color_discrete_map={
-                     '2020': '#2dbfcf',
-                     '2021': '#1fad94',
-                     '2022': '#148e95',
-                     '2023': '#0068b4',
-                     '2024': '#309ec1',
-                     '2025': '#b0d9ff'}, template='plotly')
-
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.4s', template='plotly', title='P2')
+    fig.update_layout(
+        plot_bgcolor='#515151',
+        paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
+        yaxis_title=None, title_x=0.5, margin=dict(b=10, pad=15))
+    fig.update_traces(marker_color='#83C3FF')
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
+    fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -276,14 +289,23 @@ def update_figure(selected_P3, selected_F2, selected_S1, selected_Pr1):
      Input('Pr1', 'value')])
 # create our callback function
 def update_figure_p1(selected_year, selected_F2, selected_S1, selected_Pr1):
-    df = foo_p1_v(selected_year,400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='года', y='значения',
-                 color='года', template='plotly', title='P1')
+    df = foo_p1_v(selected_year, 400, selected_F2, selected_S1, selected_Pr1)
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P1')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -296,13 +318,22 @@ def update_figure_p1(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, 400, selected_F2, selected_S1, selected_Pr1)
-
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P3')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P3')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -313,14 +344,24 @@ def update_figure_p3(selected_year, selected_F2, selected_S1, selected_Pr1):
      Input('S1', 'value'),
      Input('Pr1', 'value')])
 # create our callback function
-def update_figure_p4(selected_year,  selected_F2, selected_S1, selected_Pr1):
+def update_figure_p4(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P4')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P4')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -331,14 +372,24 @@ def update_figure_p4(selected_year,  selected_F2, selected_S1, selected_Pr1):
      Input('S1', 'value'),
      Input('Pr1', 'value')])
 # create our callback function
-def update_figure_p6(selected_year,  selected_F2, selected_S1, selected_Pr1):
+def update_figure_p6(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P6')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P6')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -349,14 +400,24 @@ def update_figure_p6(selected_year,  selected_F2, selected_S1, selected_Pr1):
      Input('S1', 'value'),
      Input('Pr1', 'value')])
 # create our callback function
-def update_figure_p1_с(selected_year,  selected_F2, selected_S1, selected_Pr1):
+def update_figure_p1_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P1_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P1_c')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -369,12 +430,22 @@ def update_figure_p1_с(selected_year,  selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p2_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P2_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P2_c')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -387,13 +458,24 @@ def update_figure_p2_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P3_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P3_c')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
+
 
 @app.callback(
     Output('fig10', 'figure'),
@@ -404,12 +486,22 @@ def update_figure_p3_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, 400)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P5_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P5_c')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -422,12 +514,22 @@ def update_figure_p5_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p6_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, 400)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P6_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P6_c')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -440,12 +542,22 @@ def update_figure_p6_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p7_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, 400)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P7_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P7_c')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
 
 
@@ -457,16 +569,25 @@ def update_figure_p7_с(selected_year, selected_F2, selected_S1, selected_Pr1):
      Input('Pr1', 'value')])
 # create our callback function
 def update_figure_p8_с(selected_year, selected_F2, selected_S1, selected_Pr1):
-    #(year,pr1,s1,s8,f2,p2)
+    # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, 400)
-    fig = px.bar(data_frame=df, x='года', y='значения', color='года', template='plotly', title='P8_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P8_c')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
                       paper_bgcolor='#515151', font_color="#D4D4D4")
+    fig.update_layout(
+        hoverlabel=dict(
+            bgcolor="#708283",
+            font_size=13,
+            font_family="Open Sans"
+        ))
+    fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#85857d')
+    for data in fig.data:
+        data["width"] = 0.5
     fig.update_layout(showlegend=False)
+    fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
     return (fig)
-
 
 
 @app.callback(Output('textarea1', 'value'), [Input('P3', 'value')])
