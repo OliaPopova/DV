@@ -50,7 +50,7 @@ app.layout = dbc.Container([
                     dbc.Container([
                         dbc.Row([
                             html.P(
-                                "P3", id='text1',
+                                "ППС39", id='text1',
                                 className="card-text",
                                 style={'font-size': '16px',
                                        'font-family': 'Open Sans'}),
@@ -59,7 +59,7 @@ app.layout = dbc.Container([
                         ]),
                         dbc.CardBody([
                             dcc.Slider(id='P3', value=500, min=500, max=750, step=1, marks=None,
-                                       className="P3slider")])
+                                       className="slider")])
                     ], className='container-fluid'),
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
@@ -69,7 +69,7 @@ app.layout = dbc.Container([
                     dbc.Container([
                         dbc.Row([
                             html.P(
-                                "F2", id='text2',
+                                "ЗП_ППС_РЕАЛ", id='text2',
                                 className="card-text",
                                 style={'font-size': '16px',
                                        'font-family': 'Open Sans'}),
@@ -79,53 +79,52 @@ app.layout = dbc.Container([
                         ]),
                         dbc.CardBody([
                             dcc.Slider(id='F2', value=400, min=400, max=750, step=1, marks=None,
-                                       className="F2slider")])
+                                       className="slider")])
                     ], className='container-fluid')
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
                     id='card2webP1'),
-
-                dbc.Row([
-                    dbc.Card([
-                        dbc.Container([
-                            dbc.Row([
-                                html.P(
-                                    "S1", id='text3',
-                                    className="card-text",
-                                    style={'font-size': '16px',
-                                           'font-family': 'Open Sans'}),
-                                dcc.Textarea(id='textarea3', className="textarea", readOnly=True,
-                                             style={})
-                            ]),
-
-                        ], className='container-fluid'),
-                        dbc.CardBody([
-                            dcc.Slider(id='S1', value=20000, min=20000, max=30000, step=1, marks=None,
-                                       className="S1slider")]),
-
-                    ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                        id='card3webP1'),
-                    dbc.Card([
-                        dbc.Container([
-                            dbc.Row([
-                                html.P(
-                                    "Pr1", id='text4',
-                                    className="card-text",
-                                    style={'font-size': '16px',
-                                           'font-family': 'Open Sans'}),
-                                dcc.Textarea(id='textarea4', className="textarea", readOnly=True,
-                                             style={})
-                            ]),
-
-                        ], className='container-fluid'),
-                        dbc.CardBody([
-                            dcc.Slider(id='Pr1', value=140, min=140, max=250, step=1, marks=None,
-                                       className="Pr1slider")]),
-
-                    ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
-                        id='card4webP1'),
-                ]),
             ], align="center"),
+            dbc.Row([
+                dbc.Card([
+                    dbc.Container([
+                        dbc.Row([
+                            html.P(
+                                "Кол-во обучающихся", id='text3',
+                                className="card-text",
+                                style={'font-size': '16px',
+                                       'font-family': 'Open Sans'}),
+                            dcc.Textarea(id='textarea3', className="textarea", readOnly=True,
+                                         style={})
+                        ]),
+
+                    ], className='container-fluid'),
+                    dbc.CardBody([
+                        dcc.Slider(id='S1', value=20000, min=20000, max=30000, step=1, marks=None,
+                                   className="slider")]),
+
+                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
+                    id='card3webP1'),
+                dbc.Card([
+                    dbc.Container([
+                        dbc.Row([
+                            html.P(
+                                "Кол-во программ", id='text4',
+                                className="card-text",
+                                style={'font-size': '16px',
+                                       'font-family': 'Open Sans'}),
+                            dcc.Textarea(id='textarea4', className="textarea", readOnly=True,
+                                         style={})
+                        ]),
+
+                    ], className='container-fluid'),
+                    dbc.CardBody([
+                        dcc.Slider(id='Pr1', value=140, min=140, max=250, step=1, marks=None,
+                                   className="slider")]),
+
+                ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
+                    id='card4webP1'),
+            ],align="center"),
 
         ], width={'size': 12}),
     ], style={'background-color': '#323436', 'margin-bottom': '2% '}),

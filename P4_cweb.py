@@ -51,7 +51,7 @@ app.layout = dbc.Container([
                     dbc.Container([
                         dbc.Row([
                             html.P(
-                                "P2", id='text1',
+                                "НАУЧ РАБ", id='text1',
                                 className="card-text",
                                 style={'font-size': '16px',
                                        'font-family': 'Open Sans'}),
@@ -60,7 +60,7 @@ app.layout = dbc.Container([
                         ]),
                         dbc.CardBody([
                             dcc.Slider(id='P2', value=300, min=300, max=500, step=1, marks=None,
-                                       className="P2slider")])
+                                       className="slider")])
                     ], className='container-fluid'),
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
@@ -69,7 +69,7 @@ app.layout = dbc.Container([
                     dbc.Container([
                         dbc.Row([
                             html.P(
-                                "P4", id='text2',
+                                "ИССЛЕД_МОЛ", id='text2',
                                 className="card-text",
                                 style={'font-size': '16px',
                                        'font-family': 'Open Sans'}),
@@ -79,7 +79,7 @@ app.layout = dbc.Container([
                         ]),
                         dbc.CardBody([
                             dcc.Slider(id='P4', value=250, min=250, max=550, step=1, marks=None,
-                                       className="P4slider")])
+                                       className="slider")])
                     ], className='container-fluid')
 
                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},

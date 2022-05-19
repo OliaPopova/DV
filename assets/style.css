@@ -12,10 +12,6 @@
 }
 
 
-.slider{
-padding: 0% !important;
-}
-
  .main-svg  {
     border-radius: 20px;
     padding-bottom: 0%;
@@ -45,7 +41,6 @@ margin: 0% 0% 3% 0%;
 margin: 0% 0% 1% 0%;
 }
 
-
 .rc-slider{
 padding: 5px 0px 15px 0px !important;
 }
@@ -56,20 +51,19 @@ background: linear-gradient(
     #a9faff,
     #27d0db);
     }
+
+.slider{
+padding: 0% !important;
+}
+
+
 .card-body {
     padding-top: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
     padding-left: 0px;
     margin: 3px 3px 3px 0px;
-
 }
-
-
-.slider {
-padding: 0% !important;
-}
-
 
 #card1webP1.card{
     margin-top: 2%;
@@ -248,6 +242,14 @@ padding: 0% !important;
 #textarea3.textarea{
  width: 58px !important;
 }
+#textarea5P5.textarea{
+ width: 60px !important;
+}
+
+#textarea5P7.textarea{
+ width: 50px !important;
+}
+
 .textarea{
     height: 30px;
     width: 43px;

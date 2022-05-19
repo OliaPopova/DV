@@ -1,14 +1,18 @@
 from dash import Dash, dcc, html, Input, Output, callback
-
-app = Dash(__name__, suppress_callback_exceptions=True)
-
-app.layout = html.Div([
-    dcc.Location(id='url', refresh=False),
-    html.Div(id='page-content')
-])
+import dash
+import dash_bootstrap_components as dbc
 
 
-index_page = html.Div([
+
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
+                meta_tags=[{'name': 'viewport',
+                            'content': 'width=device-width, initial-scale=1.0'}]
+                )
+
+server = app.server
+
+app.layout= html.Div([
     dcc.Link('Go to Page 1', href='/P1web.py'),
     html.Br(),
     dcc.Link('Go to Page 2', href='/P2web.py'),

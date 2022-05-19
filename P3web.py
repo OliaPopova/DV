@@ -60,7 +60,7 @@ app.layout = dbc.Container([
                         ]),
                         dbc.CardBody([
                             dcc.Slider(id='S5', value=1000, min=1000, max=2500, step=1, marks=None,
-                                       className="S5slider")])
+                                       className="slider")])
                     ], className='container-fluid'),
 
                 ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
@@ -79,7 +79,7 @@ app.layout = dbc.Container([
                         ]),
                         dbc.CardBody([
                             dcc.Slider(id='S2', value=8000, min=8000, max=15000, step=1, marks=None,
-                                       className="S2slider")])
+                                       className="slider")])
                     ], className='container-fluid')
 
                 ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
@@ -88,7 +88,7 @@ app.layout = dbc.Container([
                     dbc.Container([
                         dbc.Row([
                             html.P(
-                                "СТУДСПЕЦ", id='text3',
+                                "Кол-во обучающихся", id='text3',
                                 className="card-text",
                                 style={'font-size': '16px',
                                        'font-family': 'Open Sans'}),
@@ -98,8 +98,8 @@ app.layout = dbc.Container([
 
                     ], className='container-fluid'),
                     dbc.CardBody([
-                        dcc.Slider(id='S3', value=1200, min=1200, max=1900, step=1, marks=None,
-                                   className="S3slider")]),
+                        dcc.Slider(id='S1', value=20000, min=20000, max=30000, step=1, marks=None,
+                                       className="slider")]),
 
                 ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
                     id='card3webP3'),
@@ -117,7 +117,7 @@ app.layout = dbc.Container([
                         ]),
                         dbc.CardBody([
                             dcc.Slider(id='P2', value=300, min=300, max=500, step=1, marks=None,
-                                       className="P2slider")])
+                                       className="slider")])
                     ], className='container-fluid'),
 
                 ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
@@ -138,7 +138,7 @@ app.layout = dbc.Container([
                             ]),
                             dbc.CardBody([
                                 dcc.Slider(id='F2', value=400, min=400, max=750, step=1, marks=None,
-                                           className="F2slider")])
+                                           className="slider")])
                         ], className='container-fluid')
 
                     ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
@@ -147,7 +147,7 @@ app.layout = dbc.Container([
                         dbc.Container([
                             dbc.Row([
                                 html.P(
-                                    "Кол-во обучающихся", id='text6',
+                                    "СТУДСПЕЦ", id='text6',
                                     className="card-text",
                                     style={'font-size': '16px',
                                            'font-family': 'Open Sans'}),
@@ -157,8 +157,8 @@ app.layout = dbc.Container([
 
                         ], className='container-fluid'),
                         dbc.CardBody([
-                            dcc.Slider(id='S1', value=20000, min=20000, max=30000, step=1, marks=None,
-                                       className="S1slider")]),
+                            dcc.Slider(id='S3', value=1200, min=1200, max=1900, step=1, marks=None,
+                                   className="slider")]),
 
                     ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
                         id='card6webP3'),
@@ -178,7 +178,7 @@ app.layout = dbc.Container([
                         ], className='container-fluid'),
                         dbc.CardBody([
                             dcc.Slider(id='Pr1', value=140, min=140, max=250, step=1, marks=None,
-                                       className="Pr1slider")]),
+                                       className="slider")]),
 
                     ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0", "height": "80%"},
                         id='card7webP3'),
@@ -766,7 +766,7 @@ def textarea2input(normv):
         return textareav
 
 
-@app.callback(Output('textarea3', 'value'), [Input('S3', 'value')])
+@app.callback(Output('textarea6', 'value'), [Input('S3', 'value')])
 def textarea3input(normv):
     if normv:
         textareav = str(normv)
@@ -787,7 +787,7 @@ def textarea2input(normv):
         return textareav
 
 
-@app.callback(Output('textarea6', 'value'), [Input('S1', 'value')])
+@app.callback(Output('textarea3', 'value'), [Input('S1', 'value')])
 def textarea3input(normv):
     if normv:
         textareav = str(normv)
