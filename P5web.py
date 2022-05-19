@@ -81,7 +81,7 @@ app.layout = dbc.Container([
 def update_figure(selected_S6):
     # (s6)
     df = foo_p5(selected_S6)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2s', template='plotly', title='P1')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P1')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',

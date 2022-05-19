@@ -217,7 +217,7 @@ app.layout = dbc.Container([
 def update_figure(selected_P4,selected_P2):
     #(p4,p2)
     df = foo_p4_c(selected_P4,selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.4s', template='plotly', title='P4_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P4_c')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -244,7 +244,7 @@ def update_figure(selected_P4,selected_P2):
 # create our callback function
 def update_figure_p1(selected_year,selected_P2):
     df = foo_p1_v(selected_year,selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -275,7 +275,7 @@ def update_figure_p1(selected_year,selected_P2):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -306,7 +306,7 @@ def update_figure_p3(selected_year, selected_P2):
 # create our callback function
 def update_figure_p4(selected_year, selected_P2):
     df = foo_p4_v(selected_year,selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -337,7 +337,7 @@ def update_figure_p4(selected_year, selected_P2):
 # create our callback function
 def update_figure_p6(selected_year, selected_P2):
     df = foo_p6_v(selected_year, 75000, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -368,7 +368,7 @@ def update_figure_p6(selected_year, selected_P2):
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2):
     df = foo_p1_cv(selected_year, 250, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -399,7 +399,7 @@ def update_figure_p1_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2):
     df = foo_p2_cv(selected_year, 350, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -430,7 +430,7 @@ def update_figure_p2_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2):
     df = foo_p3_cv(selected_year, 50, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -461,7 +461,7 @@ def update_figure_p3_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2):
     df = foo_p5_cv(selected_year, 195, 25000, 300000, 575, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -492,7 +492,7 @@ def update_figure_p5_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2,):
     df = foo_p6_cv(selected_year, 195, 25000, 5000, 575, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P6_C',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_C',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -523,7 +523,7 @@ def update_figure_p6_с(selected_year, selected_P2,):
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2):
     df = foo_p7_cv(selected_year, 195, 25000, 11500, 1550, 575, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -555,7 +555,7 @@ def update_figure_p7_с(selected_year, selected_P2):
 def update_figure_p8_с(selected_year, selected_P2):
     #(year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, 195, 25000, 125, 575, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2s', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
