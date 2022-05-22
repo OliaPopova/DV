@@ -528,7 +528,7 @@ app.layout = dbc.Container([
                      ], style={'background-color': '#323436'}),
 
                  ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
-             ], style={'height': '100vh', 'background-color': '#323436'},fluid=True),
+             ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P2container",
              children=[
                  dbc.Container([
