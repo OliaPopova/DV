@@ -15,7 +15,6 @@ from P6_c import foo_p6_cv
 from P7_c import foo_p7_cv
 from P8_c import foo_p8_cv
 
-from allgraph import func
 from dash import dcc, no_update
 from dash import html
 from dash.dependencies import Output, Input
@@ -121,12 +120,20 @@ app.layout = dbc.Container([
         ], style={"width": "20%", "height": "10%"}, className='fig'),
 
         html.Div([
+            dcc.Graph(id='fig3', config={
+                'staticPlot': False,  # True, False
+                'displayModeBar': False,  # True, False, 'hover'
+                'watermark': True,
+            }, )
+        ], style={"width": "20%", "height": "10%"}, className='fig'),
+        html.Div([
             dcc.Graph(id='fig4', config={
                 'staticPlot': False,  # True, False
                 'displayModeBar': False,  # True, False, 'hover'
                 'watermark': True,
             }, )
         ], style={"width": "20%", "height": "10%"}, className='fig'),
+
         html.Div([
             dcc.Graph(id='fig5', config={
                 'staticPlot': False,  # True, False
@@ -134,7 +141,6 @@ app.layout = dbc.Container([
                 'watermark': True,
             }, )
         ], style={"width": "20%", "height": "10%"}, className='fig'),
-
         html.Div([
             dcc.Graph(id='fig6', config={
                 'staticPlot': False,  # True, False
@@ -146,6 +152,7 @@ app.layout = dbc.Container([
     ], style={'background-color': '#323436'}),
 
     dbc.Row([
+
         html.Div([
             dcc.Graph(id='fig7', config={
                 'staticPlot': False,  # True, False
@@ -161,7 +168,6 @@ app.layout = dbc.Container([
                 'watermark': True,
             }, )
         ], style={"width": "20%", "height": "10%"}, className='fig'),
-
         html.Div([
             dcc.Graph(id='fig9', config={
                 'staticPlot': False,  # True, False
@@ -169,6 +175,7 @@ app.layout = dbc.Container([
                 'watermark': True,
             }, )
         ], style={"width": "20%", "height": "10%"}, className='fig'),
+
         html.Div([
             dcc.Graph(id='fig10', config={
                 'staticPlot': False,  # True, False
@@ -176,7 +183,6 @@ app.layout = dbc.Container([
                 'watermark': True,
             }, )
         ], style={"width": "20%", "height": "10%"}, className='fig'),
-
         html.Div([
             dcc.Graph(id='fig11', config={
                 'staticPlot': False,  # True, False
@@ -194,15 +200,7 @@ app.layout = dbc.Container([
                 'displayModeBar': False,  # True, False, 'hover'
                 'watermark': True,
             }, )
-        ], style={"width": "20%", "height": "10%"}, className='fig'),
-
-        html.Div([
-            dcc.Graph(id='fig13', config={
-                'staticPlot': False,  # True, False
-                'displayModeBar': False,  # True, False, 'hover'
-                'watermark': True,
-            }, )
-        ], style={"width": "20%", "height": "10%"}, className='fig'),
+        ], style={"width": "20%", "height": "10%"}, className='fig12'),
 
     ], style={'background-color': '#323436'}),
 
@@ -214,9 +212,9 @@ app.layout = dbc.Container([
     [Input('P4', 'value'),
      Input('P2', 'value')])
 # create our callback function
-def update_figure(selected_P4,selected_P2):
-    #(p4,p2)
-    df = foo_p4_c(selected_P4,selected_P2)
+def update_figure(selected_P4, selected_P2):
+    # (p4,p2)
+    df = foo_p4_c(selected_P4, selected_P2)
     fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P4_c')
     fig.update_layout(
         plot_bgcolor='#515151',
@@ -242,8 +240,8 @@ def update_figure(selected_P4,selected_P2):
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
-def update_figure_p1(selected_year,selected_P2):
-    df = foo_p1_v(selected_year,selected_P2, 575, 25000, 195)
+def update_figure_p1(selected_year, selected_P2):
+    df = foo_p1_v(selected_year, selected_P2, 575, 25000, 195)
     fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
                  color_discrete_map={
                      '2022': '#6BBFFF',
@@ -269,7 +267,7 @@ def update_figure_p1(selected_year,selected_P2):
 
 
 @app.callback(
-    Output('fig4', 'figure'),
+    Output('fig3', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
@@ -300,12 +298,12 @@ def update_figure_p3(selected_year, selected_P2):
 
 
 @app.callback(
-    Output('fig5', 'figure'),
+    Output('fig4', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
 def update_figure_p4(selected_year, selected_P2):
-    df = foo_p4_v(selected_year,selected_P2, 575, 25000, 195)
+    df = foo_p4_v(selected_year, selected_P2, 575, 25000, 195)
     fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
                  color_discrete_map={
                      '2022': '#83CBF3',
@@ -331,7 +329,7 @@ def update_figure_p4(selected_year, selected_P2):
 
 
 @app.callback(
-    Output('fig6', 'figure'),
+    Output('fig5', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
@@ -362,7 +360,7 @@ def update_figure_p6(selected_year, selected_P2):
 
 
 @app.callback(
-    Output('fig7', 'figure'),
+    Output('fig6', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
@@ -393,7 +391,7 @@ def update_figure_p1_с(selected_year, selected_P2):
 
 
 @app.callback(
-    Output('fig8', 'figure'),
+    Output('fig7', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
@@ -424,7 +422,7 @@ def update_figure_p2_с(selected_year, selected_P2):
 
 
 @app.callback(
-    Output('fig9', 'figure'),
+    Output('fig8', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
@@ -455,7 +453,7 @@ def update_figure_p3_с(selected_year, selected_P2):
 
 
 @app.callback(
-    Output('fig10', 'figure'),
+    Output('fig9', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
@@ -486,11 +484,11 @@ def update_figure_p5_с(selected_year, selected_P2):
 
 
 @app.callback(
-    Output('fig11', 'figure'),
+    Output('fig10', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
-def update_figure_p6_с(selected_year, selected_P2,):
+def update_figure_p6_с(selected_year, selected_P2, ):
     df = foo_p6_cv(selected_year, 195, 25000, 5000, 575, selected_P2)
     fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_C',
                  color_discrete_map={
@@ -517,7 +515,7 @@ def update_figure_p6_с(selected_year, selected_P2,):
 
 
 @app.callback(
-    Output('fig12', 'figure'),
+    Output('fig11', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
@@ -548,12 +546,12 @@ def update_figure_p7_с(selected_year, selected_P2):
 
 
 @app.callback(
-    Output('fig13', 'figure'),
+    Output('fig12', 'figure'),
     [Input('dropdown', 'value'),
      Input('P2', 'value')])
 # create our callback function
 def update_figure_p8_с(selected_year, selected_P2):
-    #(year,pr1,s1,s8,f2,p2)
+    # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, 195, 25000, 125, 575, selected_P2)
     fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
                  color_discrete_map={
@@ -579,19 +577,19 @@ def update_figure_p8_с(selected_year, selected_P2):
     return (fig)
 
 
-
-
 @app.callback(Output('textarea1', 'value'), [Input('P2', 'value')])
 def textarea1input(normv):
     if normv:
         textareav = str(normv)
         return textareav
 
+
 @app.callback(Output('textarea2', 'value'), [Input('P4', 'value')])
 def textarea4input(normv):
     if normv:
         textareav = str(normv)
         return textareav
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

@@ -14,7 +14,7 @@ from P6 import foo_p6_v
 from P6_c import foo_p6_cv
 from P7_c import foo_p7_cv
 from P8_c import foo_p8_cv
-from base import func
+
 from dash import dcc, no_update
 from dash import html
 from dash.dependencies import Output, Input

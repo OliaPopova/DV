@@ -2,7 +2,7 @@ import dash
 import numpy
 import plotly.graph_objects as go
 from P5 import foo_p5
-from allgraph import func
+
 from dash import dcc, no_update
 from dash import html
 from dash.dependencies import Output, Input
