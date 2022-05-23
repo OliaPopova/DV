@@ -39,7 +39,7 @@ app.layout = dbc.Container([
         html.Div([
             dcc.Dropdown(
                 ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P1_c', 'P2_c', 'P3_c', 'P4_c', 'P5_c', 'P6_c', 'P7_c', 'P8_c'],
-                'P1',searchable=False,
+                'P1', searchable=False,
                 clearable=False,
                 id='dropdownpriorty',
                 style={"width": "70px", "height": "40px"}),
@@ -47,244 +47,239 @@ app.layout = dbc.Container([
     ], style={'background-color': '#323436'}),
     html.Div(id="P1container",
              children=[
-                 dbc.Container([
-                     dbc.Row([
-                         dbc.Col(
-                             html.P(
-                                 "P1",
-                                 style={'font-size': '26px', 'font-weight': 'normal',
-                                        'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
-                             width={"size": 10, "offset": 2})
-                     ]),
-                     dbc.Row([
-                         dbc.Col([
-                             dbc.Row([
-                                 dbc.Card([
-                                     dbc.Container([
-                                         dbc.Row([
-                                             html.P(
-                                                 "НАУЧ РАБ", id='text1P1',
-                                                 className="card-text",
-                                                 style={'font-size': '16px',
-                                                        'font-family': 'Open Sans'}),
-                                             dcc.Textarea(id='textarea1P1', className="textarea", readOnly=True,
-                                                          style={}),
-                                         ]),
-                                         dbc.CardBody([
-                                             dcc.Slider(id='P2P1', value=300, min=300, max=500, step=1, marks=None,
-                                                        className="slider")])
-                                     ], className='container-fluid'),
-
-                                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
-                                     id='card1P1', className='card1webP1'),
-                                 dbc.Card([
-                                     dbc.Container([
-                                         dbc.Row([
-                                             html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P1',
-                                                 className="card-text",
-                                                 style={'font-size': '16px',
-                                                        'font-family': 'Open Sans'}),
-                                             dcc.Textarea(id='textarea2P1', className="textarea", readOnly=True,
-                                                          style={}),
-
-                                         ]),
-                                         dbc.CardBody([
-                                             dcc.Slider(id='F2P1', value=400, min=400, max=750, step=1, marks=None,
-                                                        className="slider")])
-                                     ], className='container-fluid')
-
-                                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
-                                     id='card2P1', className='card2webP1'),
-
-                             ], align="center"),
-
-                         ], width={'size': 12}),
-                     ], style={'background-color': '#323436', 'margin-bottom': '0%'}),
-
-                     dbc.Row([
-                         dbc.Col([
-                             dbc.Row([
-                                 dbc.Card([
-                                     dbc.Container([
-                                         dbc.Row([
-                                             html.P(
-                                                 "Кол-во обучающихся", id='text3P1',
-                                                 className="card-text",
-                                                 style={'font-size': '16px',
-                                                        'font-family': 'Open Sans'}),
-                                             dcc.Textarea(id='textarea3P1', className="textarea", readOnly=True,
-                                                          style={})
-                                         ]),
-
-                                     ], className='container-fluid'),
+                 dbc.Row([
+                     dbc.Col(
+                         html.P(
+                             "P1",
+                             style={'font-size': '26px', 'font-weight': 'normal',
+                                    'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
+                         width={"size": 10, "offset": 2})
+                 ]),
+                 dbc.Row([
+                     dbc.Col([
+                         dbc.Row([
+                             dbc.Card([
+                                 dbc.Container([
+                                     dbc.Row([
+                                         html.P(
+                                             "НАУЧ РАБ", id='text1P1',
+                                             className="card-text",
+                                             style={'font-size': '16px',
+                                                    'font-family': 'Open Sans'}),
+                                         dcc.Textarea(id='textarea1P1', className="textarea", readOnly=True,
+                                                      style={}),
+                                     ]),
                                      dbc.CardBody([
-                                         dcc.Slider(id='S1P1', value=20000, min=20000, max=30000, step=1, marks=None,
-                                                    className="slider")]),
+                                         dcc.Slider(id='P2P1', value=300, min=300, max=500, step=1, marks=None,
+                                                    className="slider")])
+                                 ], className='container-fluid'),
 
-                                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
-                                     id='card3P1', className='card3webP1'),
-                                 dbc.Card([
-                                     dbc.Container([
-                                         dbc.Row([
-                                             html.P(
-                                                 "Кол-во программ", id='text4P1',
-                                                 className="card-text",
-                                                 style={'font-size': '16px',
-                                                        'font-family': 'Open Sans'}),
-                                             dcc.Textarea(id='textarea4P1', className="textarea", readOnly=True,
-                                                          style={})
-                                         ]),
+                             ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
+                                       "height": "80%"},
+                                 id='card1P1', className='card1webP1'),
+                             dbc.Card([
+                                 dbc.Container([
+                                     dbc.Row([
+                                         html.P(
+                                             "ЗП_ППС_РЕАЛ", id='text2P1',
+                                             className="card-text",
+                                             style={'font-size': '16px',
+                                                    'font-family': 'Open Sans'}),
+                                         dcc.Textarea(id='textarea2P1', className="textarea", readOnly=True,
+                                                      style={}),
 
-                                     ], className='container-fluid'),
+                                     ]),
                                      dbc.CardBody([
-                                         dcc.Slider(id='Pr1P1', value=140, min=140, max=250, step=1, marks=None,
-                                                    className="slider")]),
+                                         dcc.Slider(id='F2P1', value=400, min=400, max=750, step=1, marks=None,
+                                                    className="slider")])
+                                 ], className='container-fluid')
 
-                                 ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
-                                     id='card4P1', className='card4webP1'),
+                             ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
+                                       "height": "80%"},
+                                 id='card2P1', className='card2webP1'),
 
-                             ], align="center"),
+                         ], align="center"),
 
-                         ], width={'size': 12}),
-                     ], style={'background-color': '#323436', 'margin-bottom': '2% '}),
+                     ], width={'size': 12}),
+                 ], style={'background-color': '#323436', 'margin-bottom': '0%'}),
 
-                     dbc.Row([
-                         dbc.Col(
-                             html.Div([
-                                 dcc.Graph(id='fig1P1', config={
-                                     'staticPlot': False,  # True, False
-                                     'displayModeBar': False,  # True, False, 'hover'
-                                     'watermark': True,
-                                 }, )
-                             ], className='figosn')
-                         )
+                 dbc.Row([
+                     dbc.Col([
+                         dbc.Row([
+                             dbc.Card([
+                                 dbc.Container([
+                                     dbc.Row([
+                                         html.P(
+                                             "Кол-во обучающихся", id='text3P1',
+                                             className="card-text",
+                                             style={'font-size': '16px',
+                                                    'font-family': 'Open Sans'}),
+                                         dcc.Textarea(id='textarea3P1', className="textarea", readOnly=True,
+                                                      style={})
+                                     ]),
 
-                     ], style={'background-color': '#323436'}),
-                     dbc.Row([
+                                 ], className='container-fluid'),
+                                 dbc.CardBody([
+                                     dcc.Slider(id='S1P1', value=20000, min=20000, max=30000, step=1,
+                                                marks=None,
+                                                className="slider")]),
+
+                             ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
+                                       "height": "80%"},
+                                 id='card3P1', className='card3webP1'),
+                             dbc.Card([
+                                 dbc.Container([
+                                     dbc.Row([
+                                         html.P(
+                                             "Кол-во программ", id='text4P1',
+                                             className="card-text",
+                                             style={'font-size': '16px',
+                                                    'font-family': 'Open Sans'}),
+                                         dcc.Textarea(id='textarea4P1', className="textarea", readOnly=True,
+                                                      style={})
+                                     ]),
+
+                                 ], className='container-fluid'),
+                                 dbc.CardBody([
+                                     dcc.Slider(id='Pr1P1', value=140, min=140, max=250, step=1, marks=None,
+                                                className="slider")]),
+
+                             ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
+                                       "height": "80%"},
+                                 id='card4P1', className='card4webP1'),
+
+                         ], align="center"),
+
+                     ], width={'size': 12}),
+                 ], style={'background-color': '#323436', 'margin-bottom': '2% '}),
+
+                 dbc.Row([
+                     dbc.Col(
                          html.Div([
-                             dcc.Dropdown(
-                                 ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023',
-                                 searchable=False, clearable=False,
-                                 id='dropdownP1',
-                                 style={"width": "70px", "height": "40px"}, className='dropdown'),
-                         ], style={"width": "50%"}),
-                     ], style={'background-color': '#323436'}, className='dropdownrow'),
-
-                     dbc.Row([
-                         html.Div([
-                             dcc.Graph(id='fig2P1', config={
+                             dcc.Graph(id='fig1P1', config={
                                  'staticPlot': False,  # True, False
                                  'displayModeBar': False,  # True, False, 'hover'
                                  'watermark': True,
                              }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                         ], className='figosn')
+                     )
 
-                         html.Div([
-                             dcc.Graph(id='fig3P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                 ], style={'background-color': '#323436'}),
+                 dbc.Row([
+                     html.Div([
+                         dcc.Dropdown(
+                             ['2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'], '2023',
+                             searchable=False, clearable=False,
+                             id='dropdownP1',
+                             style={"width": "70px", "height": "40px"}, className='dropdown'),
+                     ], style={"width": "50%"}),
+                 ], style={'background-color': '#323436'}, className='dropdownrow'),
 
-                         html.Div([
-                             dcc.Graph(id='fig4P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
-                         html.Div([
-                             dcc.Graph(id='fig5P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                 dbc.Row([
+                     html.Div([
+                         dcc.Graph(id='fig2P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                         html.Div([
-                             dcc.Graph(id='fig6P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                     html.Div([
+                         dcc.Graph(id='fig3P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                     ], style={'background-color': '#323436'}),
+                     html.Div([
+                         dcc.Graph(id='fig4P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
+                     html.Div([
+                         dcc.Graph(id='fig5P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                     dbc.Row([
-                         html.Div([
-                             dcc.Graph(id='fig7P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                     html.Div([
+                         dcc.Graph(id='fig6P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                         html.Div([
-                             dcc.Graph(id='fig8P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                 ], style={'background-color': '#323436'}),
 
-                         html.Div([
-                             dcc.Graph(id='fig9P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
-                         html.Div([
-                             dcc.Graph(id='fig10P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                 dbc.Row([
+                     html.Div([
+                         dcc.Graph(id='fig7P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                         html.Div([
-                             dcc.Graph(id='fig11P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                     html.Div([
+                         dcc.Graph(id='fig8P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                     ], style={'background-color': '#323436'}),
+                     html.Div([
+                         dcc.Graph(id='fig9P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
+                     html.Div([
+                         dcc.Graph(id='fig10P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                     dbc.Row([
-                         html.Div([
-                             dcc.Graph(id='fig12P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                     html.Div([
+                         dcc.Graph(id='fig11P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                         html.Div([
-                             dcc.Graph(id='fig13P1', config={
-                                 'staticPlot': False,  # True, False
-                                 'displayModeBar': False,  # True, False, 'hover'
-                                 'watermark': True,
-                             }, )
-                         ], style={"width": "20%", "height": "10%"}, className='fig'),
+                 ], style={'background-color': '#323436'}),
 
-                     ],  style={'background-color': '#323436'}),
+                 dbc.Row([
+                     html.Div([
+                         dcc.Graph(id='fig12P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-                 ],className='container-fluid', style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
+                     html.Div([
+                         dcc.Graph(id='fig13P1', config={
+                             'staticPlot': False,  # True, False
+                             'displayModeBar': False,  # True, False, 'hover'
+                             'watermark': True,
+                         }, )
+                     ], style={"width": "20%", "height": "10%"}, className='fig'),
 
-             ], style={'height': '100vh', 'background-color': '#323436'}),
-
+                 ], style={'background-color': '#323436'}),
+             ]),
     html.Div(id="P1_ccontainer",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -526,12 +521,10 @@ app.layout = dbc.Container([
                          ], style={"width": "20%", "height": "10%"}, className='fig'),
 
                      ], style={'background-color': '#323436'}),
-
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P2container",
              children=[
-                 dbc.Container([
+
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -748,12 +741,9 @@ app.layout = dbc.Container([
                          ], style={"width": "20%", "height": "10%"}, className='fig'),
 
                      ], style={'background-color': '#323436'}),
-
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P2_ccontainer",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -996,12 +986,10 @@ app.layout = dbc.Container([
                          ], style={"width": "20%", "height": "10%"}, className='fig'),
 
                      ], style={'background-color': '#323436'}),
-
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P3container",
              children=[
-                 dbc.Container([
+
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -1286,12 +1274,9 @@ app.layout = dbc.Container([
 
                      ], style={'background-color': '#323436'}),
 
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
-
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P3_ccontainer",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -1534,12 +1519,9 @@ app.layout = dbc.Container([
                          ], style={"width": "20%", "height": "10%"}, className='fig'),
 
                      ], style={'background-color': '#323436'}),
-
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P4container",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -1761,12 +1743,9 @@ app.layout = dbc.Container([
 
                      ], style={'background-color': '#323436'}),
 
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
-
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P4_ccontainer",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -1938,12 +1917,9 @@ app.layout = dbc.Container([
                          ], style={"width": "20%", "height": "10%"}, className='fig12'),
 
                      ], style={'background-color': '#323436'}),
-
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P5container",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -1991,12 +1967,9 @@ app.layout = dbc.Container([
                          )
 
                      ], style={'background-color': '#323436'}),
-
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P5_ccontainer",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -2238,12 +2211,9 @@ app.layout = dbc.Container([
                          ], style={"width": "20%", "height": "10%"}, className='fig'),
 
                      ], style={'background-color': '#323436'}),
-
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P6container",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -2486,13 +2456,9 @@ app.layout = dbc.Container([
 
                      ], style={'background-color': '#323436'}),
 
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
-
              ], style={'height': '100vh', 'background-color': '#323436'}),
-
     html.Div(id="P6_ccontainer",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -2736,13 +2702,9 @@ app.layout = dbc.Container([
 
                      ], style={'background-color': '#323436'}),
 
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
-
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P7_ccontainer",
              children=[
-
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -3006,14 +2968,9 @@ app.layout = dbc.Container([
 
                      ], style={'background-color': '#323436'}),
 
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
-
              ], style={'height': '100vh', 'background-color': '#323436'}),
-
-
     html.Div(id="P8_ccontainer",
              children=[
-                 dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
@@ -3043,7 +3000,7 @@ app.layout = dbc.Container([
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
                                            "height": "80%"},
-                                     id='card1P8_c',className='card1webP1_c'),
+                                     id='card1P8_c', className='card1webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
@@ -3063,7 +3020,7 @@ app.layout = dbc.Container([
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
                                            "height": "80%"},
-                                     id='card2P8_c',className='card2webP1_c'),
+                                     id='card2P8_c', className='card2webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
@@ -3083,7 +3040,7 @@ app.layout = dbc.Container([
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
                                            "height": "80%"},
-                                     id='card3P8_c',className='card3webP1_c'),
+                                     id='card3P8_c', className='card3webP1_c'),
                                  dbc.Row([
                                      dbc.Card([
                                          dbc.Container([
@@ -3104,7 +3061,7 @@ app.layout = dbc.Container([
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
                                                "height": "80%"},
-                                         id='card4P8_c',className='card4webP1_c'),
+                                         id='card4P8_c', className='card4webP1_c'),
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
@@ -3124,7 +3081,7 @@ app.layout = dbc.Container([
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
                                                "height": "80%"},
-                                         id='card5P8_c',className='card5webP1_c'),
+                                         id='card5P8_c', className='card5webP1_c'),
                                  ]),
                              ], align="center"),
 
@@ -3255,8 +3212,6 @@ app.layout = dbc.Container([
                          ], style={"width": "20%", "height": "10%"}, className='fig'),
 
                      ], style={'background-color': '#323436'}),
-
-                 ], style={'height': '100vh', 'background-color': '#323436'}, fluid=True)
 
              ], style={'height': '100vh', 'background-color': '#323436'}),
 
@@ -8759,7 +8714,7 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
-                     '2028': '#E4FC8F', '2029': '#E4FC8F', '2030': '#E4FC8F' }
+                     '2028': '#E4FC8F', '2029': '#E4FC8F', '2030': '#E4FC8F'}
                  )
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
@@ -9422,6 +9377,7 @@ def hide_graph(value):
         return {'display': 'block'}
     return {'display': 'none'}
 
+
 @app.callback(
     Output('P8_ccontainer', 'style'),
     [Input('dropdownpriorty', 'value')])
@@ -9430,6 +9386,7 @@ def hide_graph(value):
     if value == 'P8_c':
         return {'display': 'block'}
     return {'display': 'none'}
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
