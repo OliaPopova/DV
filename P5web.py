@@ -1,6 +1,4 @@
 import dash
-import numpy
-import plotly.graph_objects as go
 from P5 import foo_p5
 
 from dash import dcc, no_update

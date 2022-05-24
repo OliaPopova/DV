@@ -1,6 +1,4 @@
 import dash
-import numpy
-import plotly.graph_objects as go
 from P1 import foo_p1_v
 from P1_c import foo_p1_cv
 from P2 import foo_p2_v
