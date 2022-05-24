@@ -24,7 +24,7 @@ import dash_bootstrap_components as dbc
 # git commit -m "Demo"
 # git push heroku main
 # heroku ps:scale web=1
-
+# heroku logs --tail
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
