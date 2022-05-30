@@ -16,11 +16,13 @@ def foo_p4_c(p4,p2):
             P4_c=0
         else:
             P4_c=p4v/p2v
+
+        if P4_c>1:
+            P4_c=1
         list_p1.append(P4_c)
         i=i+1
 
     df_val = df_val + list_p1
-
     mydictionary = {
                 'год': ['2015','2016','2017','2018','2019','2020','2021', '2022', '2023','2024', '2025', '2026', '2027', '2028', '2029','2030'],
                 'значение':df_val
@@ -35,9 +37,11 @@ def foo_p4_cv(year,p4,p2):
     val22 = float(df_val[1])
     listval = list(df[df['год'] == year].squeeze())
     val = float(listval[1])
+
     mydict = {
         'год': ['2022', year],
         'значение': [val22, val]
     }
     mydf = pd.DataFrame(mydict)
+    print(mydf)
     return mydf

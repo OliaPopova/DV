@@ -213,7 +213,7 @@ app.layout = dbc.Container([
 def update_figure(selected_P4, selected_P2):
     # (p4,p2)
     df = foo_p4_c(selected_P4, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P4_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', template='plotly', title='P4_c')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
