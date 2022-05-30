@@ -17,6 +17,10 @@ def foo_p4(p2,f2,s1,pr1):
         pr1p1v=0.636084*pr1*(0.997677094531224)**i
         p2v=p2*(1.00405898684453)**i
         P4=(cf3+p2f3v)/(cp1+f2p1v+s1p1v+pr1p1v+p2v)
+        if P4>5000:
+            P4=5000
+        # if P4<400:
+        #     P4=400
         list_p1.append(P4)
         i=i+1
 

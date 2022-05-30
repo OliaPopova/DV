@@ -11,6 +11,10 @@ def foo_p5(s6):
     while i<9:
         s6v=s6*(1.0427680782803)**i
         P5=s6v
+        if P5>10000:
+            P5=10000
+        # if P5_c<1000:
+        #     P5_c=1000
         list_p1.append(P5)
         i=i+1
 

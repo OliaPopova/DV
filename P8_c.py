@@ -29,6 +29,8 @@ def foo_p8_c(pr1,s1,s8,f2,p2):
         cs7=1153.679
         p2s7=-0.416872*p2*(1.00405898684453)**i
         P8_c=(s8v+cs9+p1s9+cs10+p1s10)/(cs4+p1s4+p2s4+cs7+p2s7)
+        if P8_c>1:
+            P8_c=1
         list_p1.append(P8_c)
         i=i+1
 

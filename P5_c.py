@@ -20,6 +20,10 @@ def foo_p5_c(pr1,s1,f5,f2,p2):
         pr1p1v = 0.636084 * pr1 * (0.997677094531224) ** i
         p2v = p2 * (1.00405898684453) ** i
         P5_c=(cf1+p2f1+pr1f1+s1f1-f5v)/(cp1+f2p1v+s1p1v+pr1p1v+p2v)
+        if P5_c>5000:
+            P5_c=5000
+        # if P5_c<300:
+        #     P5_c=300
         list_p1.append(P5_c)
         i=i+1
 

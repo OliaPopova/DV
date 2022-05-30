@@ -25,6 +25,8 @@ def foo_p7_c(pr1,s1,s2,s3,f2,p2):
         p2s7=-0.416872*p2*(1.00405898684453)**i
 
         P7_c=(cs4+p1s4+p2s4+cs7+p2s7)/(s2v+s3v+cs4+p1s4+p2s4+cs7+p2s7)
+        if P7_c>1:
+            P7_c=1
         list_p1.append(P7_c)
         i=i+1
 

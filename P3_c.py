@@ -16,6 +16,8 @@ def foo_p3_c(ar3,p2,f2,s1,pr1):
         pr1p1v=0.636084*pr1*(0.997677094531224)**i
         p2v=p2*(1.00405898684453)**i
         P3_c=ar3v/(cp1+f2p1v+s1p1v+pr1p1v+p2v)
+        if P3_c>2:
+            P3_c=2
         list_p1.append(P3_c)
         i=i+1
 

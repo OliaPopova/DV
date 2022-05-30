@@ -22,7 +22,8 @@ def foo_p3(s5,s2,s3,p2,f2,s1,pr1):
         p1=-1.419868*(cp1+pr1v+s1v+f2v)
 
         P3=s5v/(s2v+s3v+c+p2v+p1)
-
+        if P3>1:
+            P3=1
         list_p1.append(P3)
         i=i+1
 
