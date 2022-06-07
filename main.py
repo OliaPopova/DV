@@ -36,11 +36,24 @@ app.layout = dbc.Container([
     dbc.Row([
         html.Div([
             dcc.Dropdown(
-                ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P1_c', 'P2_c', 'P3_c', 'P4_c', 'P5_c', 'P6_c', 'P7_c', 'P8_c'],
-                'P1', searchable=False,
+                ['Объем НИОКР на 1 НПР',
+                 'Доля ППС до 39 лет',
+                 'Доля обучающихся бак/спец/маг (очн.),\nполучивших доп.квалификацию бесплатно',
+                 'Внебюджетный доход на 1 НПР',
+                 'Число студентов очной формы,\nполучающих цифровые компетенции',
+                 'Собственные затраты на\nИиР на 1 НПР',
+                 'Число Q1,2 публикаций WoS\nза 3 года на 1 НПР',
+                 'Число Q1,2 публикаций Scopus\nза 3 года на 1 НПР',
+                 'Число высокоцитируемых статей\nWoS(CC) за 5 лет на 1 НПР',
+                 'Доля исследователей до 39 лет',
+                 'Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
+                 'Объем доходов от РИД\nв расчете на 1 НПР',
+                 'Доля магистрантов, аспирантов\nв числе обучающихся по очной форме',
+                 'Доля иностранного контингента\nсреди магистрантов и аспирантов очной формы'],
+                'Объем НИОКР на 1 НПР', searchable=False,
                 clearable=False,
                 id='dropdownpriorty',
-                style={"width": "70px", "height": "40px"}),
+                style={"width": "370px", "height": "40px", "line-height":"1"}),
         ], style={"width": "50%"}),
     ], style={'background-color': '#323436'}),
     html.Div(id="P1container",
@@ -48,7 +61,7 @@ app.layout = dbc.Container([
                  dbc.Row([
                      dbc.Col(
                          html.P(
-                             "P1",
+                             "Объем НИОКР на 1 НПР",
                              style={'font-size': '26px', 'font-weight': 'normal',
                                     'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                          width={"size": 10, "offset": 2})
@@ -60,7 +73,7 @@ app.layout = dbc.Container([
                                  dbc.Container([
                                      dbc.Row([
                                          html.P(
-                                             "НАУЧ РАБ", id='text1P1',
+                                             "Средняя численность научных работников", id='text1P1',
                                              className="card-text",
                                              style={'font-size': '16px',
                                                     'font-family': 'Open Sans'}),
@@ -73,13 +86,13 @@ app.layout = dbc.Container([
                                  ], className='container-fluid'),
 
                              ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                       "height": "80%"},
+                                       "height": "90%"},
                                  id='card1P1', className='card1webP1'),
                              dbc.Card([
                                  dbc.Container([
                                      dbc.Row([
                                          html.P(
-                                             "ЗП_ППС_РЕАЛ", id='text2P1',
+                                             "Средняя годовая выплата на 1 ППС", id='text2P1',
                                              className="card-text",
                                              style={'font-size': '16px',
                                                     'font-family': 'Open Sans'}),
@@ -93,7 +106,7 @@ app.layout = dbc.Container([
                                  ], className='container-fluid')
 
                              ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                       "height": "80%"},
+                                       "height": "90%"},
                                  id='card2P1', className='card2webP1'),
 
                          ], align="center"),
@@ -108,7 +121,7 @@ app.layout = dbc.Container([
                                  dbc.Container([
                                      dbc.Row([
                                          html.P(
-                                             "Кол-во обучающихся", id='text3P1',
+                                             "Общее число студентов всех форм обучения", id='text3P1',
                                              className="card-text",
                                              style={'font-size': '16px',
                                                     'font-family': 'Open Sans'}),
@@ -123,13 +136,13 @@ app.layout = dbc.Container([
                                                 className="slider")]),
 
                              ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                       "height": "80%"},
+                                       "height": "90%"},
                                  id='card3P1', className='card3webP1'),
                              dbc.Card([
                                  dbc.Container([
                                      dbc.Row([
                                          html.P(
-                                             "Кол-во программ", id='text4P1',
+                                             "Число образовательных программ", id='text4P1',
                                              className="card-text",
                                              style={'font-size': '16px',
                                                     'font-family': 'Open Sans'}),
@@ -143,7 +156,7 @@ app.layout = dbc.Container([
                                                 className="slider")]),
 
                              ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                       "height": "80%"},
+                                       "height": "90%"},
                                  id='card4P1', className='card4webP1'),
 
                          ], align="center"),
@@ -281,7 +294,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P1_c",
+                                 "Число Q1,2 публикаций WoS за 3 года на 1 НПР",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -293,7 +306,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P1_c',
+                                                 "Средняя численность научных работников", id='text1P1_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -306,13 +319,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P1_c', className='card1webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P1_c',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P1_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -326,13 +339,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P1_c', className='card2webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P1_c',
+                                                 "общее число студентов всех форм обучения", id='text3P1_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -346,14 +359,14 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P1_c', className='card3webP1_c'),
                                  dbc.Row([
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "Кол-во программ", id='text4P1_c',
+                                                     "число образовательных программ", id='text4P1_c',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -367,13 +380,13 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card4P1_c', className='card4webP1_c'),
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "Web_of_Science", id='text5P1_c',
+                                                     "Число Q1,2 публикаций WoS за 3 года", id='text5P1_c',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -387,7 +400,7 @@ app.layout = dbc.Container([
                                          ], className='container-fluid')
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card5P1_c', className='card5webP1_c'),
                                  ]),
                              ], align="center"),
@@ -522,11 +535,10 @@ app.layout = dbc.Container([
              ], style={'height': '100vh', 'background-color': '#323436'}),
     html.Div(id="P2container",
              children=[
-
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P2",
+                                 "Доля ППС до 39 лет",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -538,7 +550,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ППС39", id='text1P2',
+                                                 "Средняя численность ППС до 39 лет", id='text1P2',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -551,14 +563,14 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      # тоже 4 карточки как на P1
                                      id='card1P2', className='card1webP1'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P2',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P2',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -572,7 +584,7 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P2', className='card2webP1'),
                              ], align="center"),
                              dbc.Row([
@@ -580,7 +592,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P2',
+                                                 "Общее число студентов всех форм обучения", id='text3P2',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -594,13 +606,13 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P2', className='card3webP1'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во программ", id='text4P2',
+                                                 "Число образовательных программ", id='text4P2',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -614,7 +626,7 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card4P2', className='card4webP1'),
                              ], align="center"),
 
@@ -745,7 +757,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P2_c",
+                                 "Число Q1,2 публикаций Scopus за 3 года на 1 НПР",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -757,7 +769,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P2_c',
+                                                 "Средняя численность научных работников", id='text1P2_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -770,14 +782,14 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      # тоже 5 карточек как на P1_c
                                      id='card1P2_c', className='card1webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P2_c',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P2_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -791,13 +803,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P2_c', className='card2webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P2_c',
+                                                 "Общее число студентов всех форм обучения", id='text3P2_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -811,14 +823,14 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P2_c', className='card3webP1_c'),
                                  dbc.Row([
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "Кол-во программ", id='text4P2_c',
+                                                     "Число образовательных программ", id='text4P2_c',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -832,13 +844,13 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card4P2_c', className='card4webP1_c'),
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "SCOPUS", id='text5P2_c',
+                                                     "Число Q1,2 публикаций Scopus за 3 года", id='text5P2_c',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -852,7 +864,7 @@ app.layout = dbc.Container([
                                          ], className='container-fluid')
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card5P2_c', className='card5webP1_c'),
                                  ]),
                              ], align="center"),
@@ -991,7 +1003,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P3",
+                                 "Доля обучающихся бак/спец/маг (очн.), получивших доп.квалификацию бесплатно",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -1003,7 +1015,8 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "СТУДКВАЛ", id='text1P3',
+                                                 #Количество обучающихся бак/спец/маг (очн.), получивших доп.квалификацию бесплатно!!!!
+                                                 "Количество обучающихся бак/спец/маг (очн.)", id='text1P3',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1016,13 +1029,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1webP3'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "СТУДБАК", id='text2P3',
+                                                 "Число бакалавров очной формы", id='text2P3',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1036,13 +1049,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2webP3'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P3',
+                                                 "Общее число студентов всех форм обучения", id='text3P3',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1056,14 +1069,14 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3webP3'),
 
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text4P3',
+                                                 "Средняя численность научных работников", id='text4P3',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1076,7 +1089,7 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card4webP3'),
 
                                  dbc.Row([
@@ -1084,7 +1097,7 @@ app.layout = dbc.Container([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "ЗП_ППС_РЕАЛ", id='text5P3',
+                                                     "Средняя годовая выплата на 1 ППС", id='text5P3',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -1098,13 +1111,13 @@ app.layout = dbc.Container([
                                          ], className='container-fluid')
 
                                      ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card5webP3'),
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "СТУДСПЕЦ", id='text6P3',
+                                                     "Число обучающихся специалитета очной формы", id='text6P3',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -1118,14 +1131,14 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card6webP3'),
 
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "Кол-во программ", id='text7P3',
+                                                     "Число образовательных программ", id='text7P3',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -1139,7 +1152,7 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "22%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card7webP3'),
                                  ]),
                              ], align="center"),
@@ -1278,7 +1291,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P3_c",
+                                 "Число высокоцитируемых статей WoS(CC) за 5 лет на 1 НПР",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -1290,7 +1303,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P3_с',
+                                                 "Средняя численность научных работников", id='text1P3_с',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1303,13 +1316,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P3_с', className='card1webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P3_с',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P3_с',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1323,13 +1336,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P3_с', className='card2webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P3_с',
+                                                 "Общее число студентов всех форм обучения", id='text3P3_с',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1343,7 +1356,7 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P3_с', className='card3webP1_c'),
 
                                  dbc.Row([
@@ -1351,7 +1364,7 @@ app.layout = dbc.Container([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "Кол-во программ", id='text4P3_с',
+                                                     "Число образовательных программ", id='text4P3_с',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -1365,13 +1378,13 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card4P3_с', className='card4webP1_c'),
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "ARTICLE_HIGH", id='text5P3_с',
+                                                     "Число высокоцитируемых статей WoS(CC) за 5 лет", id='text5P3_с',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -1385,7 +1398,7 @@ app.layout = dbc.Container([
                                          ], className='container-fluid')
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card5P3_c', className='card5webP1_c'),
                                  ]),
                              ], align="center"),
@@ -1523,7 +1536,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P4",
+                                 "Внебюджетный доход на 1 НПР",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -1535,7 +1548,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P4',
+                                                 "Средняя численность научных работников", id='text1P4',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1548,13 +1561,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P4', className='card1webP1'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P4',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P4',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1568,13 +1581,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P4', className='card2webP1'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P4',
+                                                 "Общее число студентов всех форм обучения", id='text3P4',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1588,13 +1601,13 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P4', className='card3webP1'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во программ", id='text4P4',
+                                                 "Число образовательных программ", id='text4P4',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1608,7 +1621,7 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card4P4', className='card4webP1'),
 
                              ], align="center"),
@@ -1747,7 +1760,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P4_c",
+                                 "Доля исследователей до 39 лет",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -1759,7 +1772,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P4_c',
+                                                 "Средняя численность научных работников", id='text1P4_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1772,13 +1785,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P4_c', className='card1webP1'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ИССЛЕД_МОЛ", id='text2P4_c',
+                                                 "Средняя численность исследователей в возрасте до 39 лет", id='text2P4_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1792,7 +1805,7 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P4_c', className='card2webP1'),
 
                              ], align="center"),
@@ -1921,7 +1934,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P5",
+                                 "Число студентов очной формы, получающих цифровые компетенции",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -1933,7 +1946,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЦИФРСТУД", id='text1P5',
+                                                 "Число студентов очной формы, получающих цифровые компетенции", id='text1P5',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1946,7 +1959,7 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P5'),
                              ], align="center"),
 
@@ -1971,7 +1984,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P5_c",
+                                 "Объём НИОКР (без ГЗ) в расчете на 1 НПР",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -1983,7 +1996,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P5_c',
+                                                 "Средняя численность научных работников", id='text1P5_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -1996,13 +2009,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P5_c', className='card1webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P5_c',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P5_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2016,13 +2029,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P5_c', className='card2webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P5_c',
+                                                 "Общее число студентов всех форм обучения", id='text3P5_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2036,13 +2049,13 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P5_c', className='card3webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во программ", id='text4P5_c',
+                                                 "Число образовательных программ", id='text4P5_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2056,13 +2069,13 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card4P5_c', className='card4webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Объём СГЗ НИОКР", id='text5P5_c',
+                                                 "Объем госзадания НИОКР", id='text5P5_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2077,7 +2090,7 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card5P5_c', className='card5webP1_c'),
 
                              ], align="center"),
@@ -2215,7 +2228,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P6",
+                                 "Собственные затраты на ИиР на 1 НПР",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -2227,7 +2240,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P6',
+                                                 "Средняя численность научных работников", id='text1P6',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2240,13 +2253,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P6', className='card1webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P6',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P6',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2260,13 +2273,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P6', className='card2webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P6',
+                                                 "Общее число студентов всех форм обучения", id='text3P6',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2280,14 +2293,14 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P6', className='card3webP1_c'),
                                  dbc.Row([
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "Кол-во программ", id='text4P6',
+                                                     "Число образовательных программ", id='text4P6',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -2301,13 +2314,13 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card4P6', className='card4webP1_c'),
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "ОБЪЕМ_СОБСТ_ИИР", id='text5P6',
+                                                     "Объём собственных затрат на ИиР", id='text5P6',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -2321,7 +2334,7 @@ app.layout = dbc.Container([
                                          ], className='container-fluid'),
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card5P6', className='card5webP1_c'),
                                  ]),
                              ], align="center"),
@@ -2460,7 +2473,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P6_c",
+                                 "Объем доходов от РИД в расчете на 1 НПР",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -2472,7 +2485,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P6_c',
+                                                 "Средняя численность научных работников", id='text1P6_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2485,13 +2498,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P6_c', className='card1webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P6_c',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P6_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2505,13 +2518,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P6_c', className='card2webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P6_c',
+                                                 "Общее число студентов всех форм обучения", id='text3P6_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2525,14 +2538,14 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P6_c', className='card3webP1_c'),
                                  dbc.Row([
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "Кол-во программ", id='text4P6_c',
+                                                     "Число образовательных программ", id='text4P6_c',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -2546,13 +2559,13 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card4P6_c', className='card4webP1_c'),
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "ИСП_РЕЗ_ИНТ_ДЕЯТ", id='text5P6_c',
+                                                     "Объем средств от использования РИД", id='text5P6_c',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -2567,7 +2580,7 @@ app.layout = dbc.Container([
                                          ], className='container-fluid')
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card5P6_c', className='card5webP1_c'),
                                  ]),
                              ], align="center"),
@@ -2706,7 +2719,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P7_c",
+                                 "Доля магистрантов, аспирантов в числе обучающихся по очной форме",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -2718,7 +2731,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P7_c',
+                                                 "Средняя численность научных работников", id='text1P7_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2731,13 +2744,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1webP7_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P7_c',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P7_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2751,13 +2764,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2webP7_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P7_c',
+                                                 "Общее число студентов всех форм обучения", id='text3P7_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2771,13 +2784,13 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3webP7_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во программ", id='text4P7_c',
+                                                 "Число образовательных программ", id='text4P7_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2791,13 +2804,13 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card4webP7_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "СТУДБАК", id='text5P7_c',
+                                                 "Число бакалавров очной формы", id='text5P7_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2812,14 +2825,14 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card5webP7_c'),
 
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "СТУДСПЕЦ", id='text6P7_c',
+                                                 "Число обучающихся специалитета очной формы", id='text6P7_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2833,7 +2846,7 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card6webP7_c'),
 
                              ], align="center"),
@@ -2972,7 +2985,7 @@ app.layout = dbc.Container([
                      dbc.Row([
                          dbc.Col(
                              html.P(
-                                 "P8_c",
+                                 "Доля иностранного контингента среди магистрантов и аспирантов очной формы",
                                  style={'font-size': '26px', 'font-weight': 'normal',
                                         'font-family': 'Open Sans', 'color': 'white'}, className='dashname'),
                              width={"size": 10, "offset": 2})
@@ -2984,7 +2997,7 @@ app.layout = dbc.Container([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "НАУЧ РАБ", id='text1P8_c',
+                                                 "Средняя численность научных работников", id='text1P8_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -2997,13 +3010,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid'),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card1P8_c', className='card1webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "ЗП_ППС_РЕАЛ", id='text2P8_c',
+                                                 "Средняя годовая выплата на 1 ППС", id='text2P8_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -3017,13 +3030,13 @@ app.layout = dbc.Container([
                                      ], className='container-fluid')
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card2P8_c', className='card2webP1_c'),
                                  dbc.Card([
                                      dbc.Container([
                                          dbc.Row([
                                              html.P(
-                                                 "Кол-во обучающихся", id='text3P8_c',
+                                                 "Общее число студентов всех форм обучения", id='text3P8_c',
                                                  className="card-text",
                                                  style={'font-size': '16px',
                                                         'font-family': 'Open Sans'}),
@@ -3037,14 +3050,14 @@ app.layout = dbc.Container([
                                                     className="slider")]),
 
                                  ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                           "height": "80%"},
+                                           "height": "90%"},
                                      id='card3P8_c', className='card3webP1_c'),
                                  dbc.Row([
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "Кол-во программ", id='text4P8_c',
+                                                     "Число образовательных программ", id='text4P8_c',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -3058,13 +3071,13 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card4P8_c', className='card4webP1_c'),
                                      dbc.Card([
                                          dbc.Container([
                                              dbc.Row([
                                                  html.P(
-                                                     "МАГА_ИНОСТР_СТУД_МОН", id='text5P8_c',
+                                                     "Численность иностранных магистратрантов в рамках квоты МОН", id='text5P8_c',
                                                      className="card-text",
                                                      style={'font-size': '16px',
                                                             'font-family': 'Open Sans'}),
@@ -3078,7 +3091,7 @@ app.layout = dbc.Container([
                                                         className="slider")]),
 
                                      ], style={"width": "25%", 'border-radius': '15px', "border": "1px #E0E0E0",
-                                               "height": "80%"},
+                                               "height": "90%"},
                                          id='card5P8_c', className='card5webP1_c'),
                                  ]),
                              ], align="center"),
@@ -3225,7 +3238,8 @@ app.layout = dbc.Container([
 # create our callback function
 def update_figure(selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1(selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.0f', template='plotly', title='P1')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -3254,7 +3268,8 @@ def update_figure(selected_P2, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -3264,7 +3279,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3291,7 +3307,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
 
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -3300,7 +3317,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3325,7 +3343,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -3334,7 +3353,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3359,7 +3379,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -3368,7 +3389,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3393,7 +3415,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -3402,7 +3425,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3427,7 +3451,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -3436,7 +3461,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3461,7 +3487,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -3470,7 +3497,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3492,7 +3520,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -3501,7 +3530,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3526,7 +3556,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ) в расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -3535,7 +3566,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3560,7 +3592,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД в расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -3569,7 +3602,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3594,7 +3628,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -3603,7 +3638,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3629,7 +3665,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -3638,7 +3675,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3692,7 +3730,8 @@ def textarea4input(normv):
 def update_figure(selected_Ar1, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (ar1,p2,f2,s1,pr1)
     df = foo_p1_c(selected_Ar1, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P1_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -3722,7 +3761,8 @@ def update_figure(selected_Ar1, selected_P2, selected_F2, selected_S1, selected_
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -3731,7 +3771,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3756,7 +3797,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
 
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -3765,7 +3807,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3791,7 +3834,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
 
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -3800,7 +3844,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3825,7 +3870,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -3834,7 +3880,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3859,7 +3906,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='ССобственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -3868,7 +3916,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3893,7 +3942,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -3902,7 +3952,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3927,7 +3978,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -3936,7 +3988,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3958,7 +4011,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -3967,7 +4021,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -3992,7 +4047,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -4001,7 +4057,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4026,7 +4083,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -4035,7 +4093,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4060,7 +4119,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -4069,7 +4129,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4095,7 +4156,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -4104,7 +4166,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4164,7 +4227,8 @@ def textarea4input(normv):
 def update_figure(selected_P3, selected_F2, selected_S1, selected_Pr1):
     # (p3,f2,s1,pr1)
     df = foo_p2(selected_P3, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P2')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -4193,7 +4257,8 @@ def update_figure(selected_P3, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p1(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -4202,7 +4267,8 @@ def update_figure_p1(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4226,7 +4292,8 @@ def update_figure_p1(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -4235,7 +4302,8 @@ def update_figure_p3(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4259,7 +4327,8 @@ def update_figure_p3(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p4(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -4268,7 +4337,8 @@ def update_figure_p4(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4292,7 +4362,8 @@ def update_figure_p4(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p6(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -4301,7 +4372,8 @@ def update_figure_p6(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4325,7 +4397,8 @@ def update_figure_p6(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p1_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -4334,7 +4407,8 @@ def update_figure_p1_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4358,7 +4432,8 @@ def update_figure_p1_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p2_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -4367,7 +4442,8 @@ def update_figure_p2_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4391,7 +4467,8 @@ def update_figure_p2_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -4400,7 +4477,8 @@ def update_figure_p3_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4424,7 +4502,8 @@ def update_figure_p3_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, 400)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -4433,7 +4512,8 @@ def update_figure_p5_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4457,7 +4537,8 @@ def update_figure_p5_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p6_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, 400)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -4466,7 +4547,8 @@ def update_figure_p6_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4490,7 +4572,8 @@ def update_figure_p6_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p7_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, 400)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -4499,7 +4582,8 @@ def update_figure_p7_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4524,7 +4608,8 @@ def update_figure_p7_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 def update_figure_p8_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, 400)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -4533,7 +4618,8 @@ def update_figure_p8_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4587,7 +4673,8 @@ def textarea4input(normv):
 def update_figure(selected_Ar2, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (ar2,p2,f2,s1,pr1)
     df = foo_p2_c(selected_Ar2, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P2_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus за 3 года на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -4617,7 +4704,8 @@ def update_figure(selected_Ar2, selected_P2, selected_F2, selected_S1, selected_
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -4626,7 +4714,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4650,7 +4739,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -4659,7 +4749,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4684,7 +4775,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -4693,7 +4785,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4718,7 +4811,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -4727,7 +4821,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4752,7 +4847,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -4761,7 +4857,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4786,7 +4883,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -4795,7 +4893,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4820,7 +4919,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -4829,7 +4929,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4851,7 +4952,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -4860,7 +4962,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4885,7 +4988,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -4894,7 +4998,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4919,7 +5024,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -4928,7 +5034,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4953,7 +5060,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -4962,7 +5070,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -4988,7 +5097,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -4997,7 +5107,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5060,7 +5171,8 @@ def textarea5input(normv):
 def update_figure(selected_S5, selected_S2, selected_S3, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (s5,s2,s3,p2,f2,s1,pr1)
     df = foo_p3(selected_S5, selected_S2, selected_S3, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P3')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.), получивших доп.квалификацию бесплатно')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -5090,7 +5202,8 @@ def update_figure(selected_S5, selected_S2, selected_S3, selected_P2, selected_F
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -5099,7 +5212,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5123,7 +5237,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -5132,7 +5247,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5157,7 +5273,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -5166,7 +5283,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5191,7 +5309,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -5200,7 +5319,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5225,7 +5345,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -5234,7 +5355,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5259,7 +5381,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -5268,7 +5391,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5293,7 +5417,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -5302,7 +5427,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5324,7 +5450,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -5333,7 +5460,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5358,7 +5486,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -5367,7 +5496,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5392,7 +5522,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -5401,7 +5532,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5426,7 +5558,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -5435,7 +5568,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5461,7 +5595,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -5469,7 +5604,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5544,7 +5680,8 @@ def textarea4input(normv):
 def update_figure(selected_Ar3, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (ar3,p2,f2,s1,pr1)
     df = foo_p3_c(selected_Ar3, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P3_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей WoS(CC) за 5 лет на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -5574,7 +5711,8 @@ def update_figure(selected_Ar3, selected_P2, selected_F2, selected_S1, selected_
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -5583,7 +5721,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5607,7 +5746,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -5616,7 +5756,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5641,7 +5782,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -5650,7 +5792,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5675,7 +5818,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -5684,7 +5828,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5709,7 +5854,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -5718,7 +5864,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5743,7 +5890,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -5752,7 +5900,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5777,7 +5926,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -5786,7 +5936,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5808,7 +5959,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -5817,7 +5969,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5842,7 +5995,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -5851,7 +6005,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5876,7 +6031,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -5885,7 +6041,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5910,7 +6067,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -5919,7 +6077,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -5945,7 +6104,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -5954,7 +6114,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6014,7 +6175,8 @@ def textarea5input(normv):
 def update_figure(selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (p2,f2,s1,pr1)
     df = foo_p4(selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.0f', template='plotly', title='P4')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -6044,7 +6206,8 @@ def update_figure(selected_P2, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -6053,7 +6216,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6077,7 +6241,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -6086,7 +6251,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6111,7 +6277,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -6120,7 +6287,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6145,7 +6313,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -6154,7 +6323,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6179,7 +6349,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -6188,7 +6359,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6213,7 +6385,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -6222,7 +6395,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6247,7 +6421,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -6256,7 +6431,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6278,7 +6454,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_C',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -6287,7 +6464,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6312,7 +6490,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -6321,7 +6500,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6346,7 +6526,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -6355,7 +6536,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6380,7 +6562,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -6389,7 +6572,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6415,7 +6599,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -6424,7 +6609,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6475,7 +6661,8 @@ def textarea4input(normv):
 def update_figure(selected_P4, selected_P2):
     # (p4,p2)
     df = foo_p4_c(selected_P4, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P4_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -6502,7 +6689,8 @@ def update_figure(selected_P4, selected_P2):
 # create our callback function
 def update_figure_p1(selected_year, selected_P2):
     df = foo_p1_v(selected_year, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -6511,7 +6699,8 @@ def update_figure_p1(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6533,7 +6722,8 @@ def update_figure_p1(selected_year, selected_P2):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -6542,7 +6732,8 @@ def update_figure_p3(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6564,7 +6755,8 @@ def update_figure_p3(selected_year, selected_P2):
 # create our callback function
 def update_figure_p4(selected_year, selected_P2):
     df = foo_p4_v(selected_year, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -6573,7 +6765,8 @@ def update_figure_p4(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6595,7 +6788,8 @@ def update_figure_p4(selected_year, selected_P2):
 # create our callback function
 def update_figure_p6(selected_year, selected_P2):
     df = foo_p6_v(selected_year, 75000, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -6604,7 +6798,8 @@ def update_figure_p6(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6626,7 +6821,8 @@ def update_figure_p6(selected_year, selected_P2):
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2):
     df = foo_p1_cv(selected_year, 250, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -6635,7 +6831,8 @@ def update_figure_p1_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6657,7 +6854,8 @@ def update_figure_p1_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2):
     df = foo_p2_cv(selected_year, 350, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -6666,7 +6864,8 @@ def update_figure_p2_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6688,7 +6887,8 @@ def update_figure_p2_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2):
     df = foo_p3_cv(selected_year, 50, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -6697,7 +6897,8 @@ def update_figure_p3_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6719,7 +6920,8 @@ def update_figure_p3_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2):
     df = foo_p5_cv(selected_year, 195, 25000, 300000, 575, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -6728,7 +6930,8 @@ def update_figure_p5_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6750,7 +6953,8 @@ def update_figure_p5_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, ):
     df = foo_p6_cv(selected_year, 195, 25000, 5000, 575, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_C',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -6759,7 +6963,8 @@ def update_figure_p6_с(selected_year, selected_P2, ):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6781,7 +6986,8 @@ def update_figure_p6_с(selected_year, selected_P2, ):
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2):
     df = foo_p7_cv(selected_year, 195, 25000, 11500, 1550, 575, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -6790,7 +6996,8 @@ def update_figure_p7_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6813,7 +7020,8 @@ def update_figure_p7_с(selected_year, selected_P2):
 def update_figure_p8_с(selected_year, selected_P2):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, 195, 25000, 125, 575, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -6822,7 +7030,8 @@ def update_figure_p8_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6858,7 +7067,8 @@ def textarea4input(normv):
 def update_figure(selected_S6):
     # (s6)
     df = foo_p5(selected_S6)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P1')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Число студентов очной формы, получающих цифровые компетенции')
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
@@ -6896,7 +7106,8 @@ def textarea1input(normv):
 def update_figure(selected_F5, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (pr1,s1,f5,f2,p2)
     df = foo_p5_c(selected_Pr1, selected_S1, selected_F5, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.0f', template='plotly', title='P5_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ) в расчете на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -6926,7 +7137,8 @@ def update_figure(selected_F5, selected_P2, selected_F2, selected_S1, selected_P
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -6935,7 +7147,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6959,7 +7172,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -6968,7 +7182,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -6993,7 +7208,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -7002,7 +7218,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7027,7 +7244,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -7036,7 +7254,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7061,7 +7280,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -7070,7 +7290,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7095,7 +7316,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -7104,7 +7326,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7129,7 +7352,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -7138,7 +7362,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7163,7 +7388,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -7172,7 +7398,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7194,7 +7421,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -7203,7 +7431,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7228,7 +7457,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -7237,7 +7467,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7262,7 +7493,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -7271,7 +7503,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7297,7 +7530,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -7306,7 +7540,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7367,7 +7602,8 @@ def textarea5input(normv):
 def update_figure(selected_F4, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (f4,p2,f2,s1,pr1)
     df = foo_p6(selected_F4, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P1_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -7397,7 +7633,8 @@ def update_figure(selected_F4, selected_P2, selected_F2, selected_S1, selected_P
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -7406,7 +7643,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7430,7 +7668,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -7439,7 +7678,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7464,7 +7704,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -7473,7 +7714,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7498,7 +7740,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -7507,7 +7750,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7532,7 +7776,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -7541,7 +7786,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7566,7 +7812,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -7575,7 +7822,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7600,7 +7848,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -7609,7 +7858,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7631,7 +7881,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -7640,7 +7891,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7665,7 +7917,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -7674,7 +7927,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7699,7 +7953,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -7708,7 +7963,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7733,7 +7989,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -7742,7 +7999,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7768,7 +8026,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -7777,7 +8036,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7838,7 +8098,8 @@ def textarea5input(normv):
 def update_figure(selected_Pr1, selected_S1, selected_F6, selected_F2, selected_P2):
     # (pr1,s1,f6,f2,p2)
     df = foo_p6_c(selected_Pr1, selected_S1, selected_F6, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P1_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД в расчете на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -7868,7 +8129,8 @@ def update_figure(selected_Pr1, selected_S1, selected_F6, selected_F2, selected_
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -7877,7 +8139,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7901,7 +8164,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -7910,7 +8174,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7935,7 +8200,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -7944,7 +8210,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -7969,7 +8236,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -7978,7 +8246,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8003,7 +8272,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -8012,7 +8282,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8037,7 +8308,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -8046,7 +8318,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8071,7 +8344,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='ЧЧисло Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -8080,7 +8354,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8105,7 +8380,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -8114,7 +8390,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8136,7 +8413,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -8145,7 +8423,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8170,7 +8449,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0s', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0s', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -8179,7 +8459,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8204,7 +8485,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -8213,7 +8495,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8239,7 +8522,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -8248,7 +8532,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8308,7 +8593,8 @@ def textarea5input(normv):
 # create our callback function
 def update_figure(selected_Pr1, selected_S1, selected_S8, selected_F2, selected_P2):
     df = foo_p8_c(selected_Pr1, selected_S1, selected_S8, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P1_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди магистрантов и аспирантов очной формы')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -8338,7 +8624,8 @@ def update_figure(selected_Pr1, selected_S1, selected_S8, selected_F2, selected_
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -8347,7 +8634,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8371,7 +8659,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -8380,7 +8669,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8405,7 +8695,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -8414,7 +8705,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8439,7 +8731,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -8448,7 +8741,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8473,7 +8767,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -8482,7 +8777,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8507,7 +8803,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -8516,7 +8813,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8541,7 +8839,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -8550,7 +8849,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8575,7 +8875,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -8584,7 +8885,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8606,7 +8908,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -8615,7 +8918,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8640,7 +8944,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -8649,7 +8954,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8674,7 +8980,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -8683,7 +8990,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8708,7 +9016,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p7_cv(selected_year, selected_Pr1, selected_S1, 11500, 1550, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P7-c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов<br>в числе обучающихся по очной форме',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -8717,7 +9026,8 @@ def update_figure_p7_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8779,7 +9089,8 @@ def textarea5input(normv):
 def update_figure(selected_Pr1, selected_S1, selected_S2, selected_S3, selected_F2, selected_P2):
     # (pr1,s1,s2,s3,f2,p2)
     df = foo_p7_c(selected_Pr1, selected_S1, selected_S2, selected_S3, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly', title='P1_c')
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+                 title='Доля магистрантов, аспирантов в числе обучающихся по очной форме')
     fig.update_layout(
         plot_bgcolor='#515151',
         paper_bgcolor='#515151', font_color="#D4D4D4", xaxis_title=None,
@@ -8809,7 +9120,8 @@ def update_figure(selected_Pr1, selected_S1, selected_S2, selected_S3, selected_
 # create our callback function
 def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P1',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объем НИОКР на 1 НПР',
                  color_discrete_map={
                      '2022': '#6BBFFF',
                      '2023': '#027AD3', '2024': '#027AD3', '2025': '#027AD3', '2026': '#027AD3', '2027': '#027AD3',
@@ -8818,7 +9130,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8842,7 +9155,8 @@ def update_figure_p1(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_v(selected_year, 625, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля ППС до 39 лет',
                  color_discrete_map={
                      '2022': '#76C5F9',
                      '2023': '#1584CE', '2024': '#1584CE', '2025': '#1584CE', '2026': '#1584CE', '2027': '#1584CE',
@@ -8851,7 +9165,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8876,7 +9191,8 @@ def update_figure_p2(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_v(selected_year, 1750, 11500, 1550, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля обучающихся бак/спец/маг (очн.),<br>получивших доп.квалификацию бесплатно',
                  color_discrete_map={
                      '2022': '#83CBF3',
                      '2023': '#298EC8', '2024': '#298EC8', '2025': '#298EC8', '2026': '#298EC8', '2027': '#298EC8',
@@ -8885,7 +9201,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8910,7 +9227,8 @@ def update_figure_p3(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p4_v(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P4',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Внебюджетный доход на 1 НПР',
                  color_discrete_map={
                      '2022': '#8FD1EC',
                      '2023': '#3C99C2', '2024': '#3C99C2', '2025': '#3C99C2', '2026': '#3C99C2', '2027': '#3C99C2',
@@ -8919,7 +9237,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8944,7 +9263,8 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -8953,7 +9273,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -8978,7 +9299,8 @@ def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p1_cv(selected_year, 250, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P1_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций WoS <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#B7F3F8',
                      '2023': '#50A3BC', '2024': '#50A3BC', '2025': '#50A3BC', '2026': '#50A3BC', '2027': '#50A3BC',
@@ -8987,7 +9309,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -9012,7 +9335,8 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p2_cv(selected_year, 350, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P2_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число Q1,2 публикаций Scopus <br>за 3 года на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
                      '2023': '#82D6CA', '2024': '#82D6CA', '2025': '#82D6CA', '2026': '#82D6CA', '2027': '#82D6CA',
@@ -9021,7 +9345,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -9046,7 +9371,8 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P3_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
                      '2023': '#93DDBD', '2024': '#93DDBD', '2025': '#93DDBD', '2026': '#93DDBD', '2027': '#93DDBD',
@@ -9055,7 +9381,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -9077,7 +9404,8 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P4_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#CBEECD',
                      '2023': '#93E0BE', '2024': '#93E0BE', '2025': '#93E0BE', '2026': '#93E0BE', '2027': '#93E0BE',
@@ -9086,7 +9414,8 @@ def update_figure_p4_с(selected_year, selected_P2):
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -9111,7 +9440,8 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly', title='P5_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+                 title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
                      '2023': '#A9EAB0', '2024': '#A9EAB0', '2025': '#A9EAB0', '2026': '#A9EAB0', '2027': '#A9EAB0',
@@ -9120,7 +9450,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -9145,7 +9476,8 @@ def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_cv(selected_year, selected_Pr1, selected_S1, 5000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P6_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Объем доходов от РИД\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#E4FAC0',
                      '2023': '#D6F8A1', '2024': '#D6F8A1', '2025': '#D6F8A1', '2026': '#D6F8A1', '2027': '#D6F8A1',
@@ -9154,7 +9486,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -9180,7 +9513,8 @@ def update_figure_p6_с(selected_year, selected_P2, selected_F2, selected_S1, se
 def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (year,pr1,s1,s8,f2,p2)
     df = foo_p8_cv(selected_year, selected_Pr1, selected_S1, 125, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly', title='P8_c',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+                 title='Доля иностранного контингента среди<br>магистрантов и аспирантов очной формы',
                  color_discrete_map={
                      '2022': '#F0FFBB',
                      '2023': '#E4FC8F', '2024': '#E4FC8F', '2025': '#E4FC8F', '2026': '#E4FC8F', '2027': '#E4FC8F',
@@ -9189,7 +9523,8 @@ def update_figure_p8_с(selected_year, selected_P2, selected_F2, selected_S1, se
     fig.update_layout(xaxis_title=None,
                       yaxis_title=None,
                       plot_bgcolor='#515151',
-                      paper_bgcolor='#515151', font_color="#D4D4D4")
+                      paper_bgcolor='#515151', font_color="#D4D4D4",
+                      title=dict(font=dict(size=13)))
     fig.update_layout(
         hoverlabel=dict(
             bgcolor="#708283",
@@ -9251,7 +9586,7 @@ def textarea5input(normv):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P1':
+    if value == 'Объем НИОКР на 1 НПР':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9261,7 +9596,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P1_c':
+    if value == 'Число Q1,2 публикаций WoS\nза 3 года на 1 НПР':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9271,7 +9606,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P2':
+    if value == 'Доля ППС до 39 лет':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9281,7 +9616,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P2_c':
+    if value == 'Число Q1,2 публикаций Scopus\nза 3 года на 1 НПР':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9291,7 +9626,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P3':
+    if value == 'Доля обучающихся бак/спец/маг (очн.),\nполучивших доп.квалификацию бесплатно':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9301,7 +9636,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P3_c':
+    if value == 'Число высокоцитируемых статей\nWoS(CC) за 5 лет на 1 НПР':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9311,7 +9646,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P4':
+    if value == 'Внебюджетный доход на 1 НПР':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9321,7 +9656,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P4_c':
+    if value == 'Доля исследователей до 39 лет':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9331,7 +9666,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P5':
+    if value == 'Число студентов очной формы,\nполучающих цифровые компетенции':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9341,7 +9676,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P5_c':
+    if value == 'Объём НИОКР (без ГЗ)\nв расчете на 1 НПР':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9351,7 +9686,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P6':
+    if value == 'Собственные затраты на\nИиР на 1 НПР':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9361,7 +9696,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P6_c':
+    if value == 'Объем доходов от РИД\nв расчете на 1 НПР':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9371,7 +9706,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P7_c':
+    if value == 'Доля магистрантов, аспирантов\nв числе обучающихся по очной форме':
         return {'display': 'block'}
     return {'display': 'none'}
 
@@ -9381,7 +9716,7 @@ def hide_graph(value):
     [Input('dropdownpriorty', 'value')])
 # create our callback function
 def hide_graph(value):
-    if value == 'P8_c':
+    if value == 'Доля иностранного контингента\nсреди магистрантов и аспирантов очной формы':
         return {'display': 'block'}
     return {'display': 'none'}
 

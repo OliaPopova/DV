@@ -26,13 +26,15 @@
 height: 60px;
 }
 .dropdown{
-    width: 70px;
+    width: 270px;
     height: 40px;
     border-radius: 15px;
     padding-bottom: 0%;
     padding-top: 0%;
     position: absolute;
 }
+
+
 
 .figosn{
 margin: 0% 0% 3% 0%;
@@ -43,7 +45,27 @@ margin: 0% 0% 1% 0%;
 
 
 .rc-slider{
-padding: 5px 0px 15px 0px !important;
+padding: 10px 0px 15px 0px !important;
+}
+
+#card1P5 .rc-slider{
+padding: 40px 0px 15px 0px !important;
+}
+
+#P4P4_c .rc-slider{
+padding: 33px 0px 15px 0px !important;
+}
+
+#P2P4_c .rc-slider{
+padding: 33px 0px 15px 0px !important;
+}
+
+#Pr1P8_c .rc-slider{
+padding: 33px 0px 15px 0px !important;
+}
+
+#S8P8_c .rc-slider{
+padding: 33px 0px 15px 0px !important;
 }
 
 .rc-slider-step {
@@ -288,6 +310,7 @@ padding: 0% !important;
 }
 
 
+
 .container{
 padding: 0% !important;
 }
@@ -302,6 +325,10 @@ padding: 0% !important;
     resize: none;
 
 }
+
+
+
+
 
 .txta {
   width: 600;
