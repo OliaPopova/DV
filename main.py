@@ -3487,7 +3487,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
@@ -3978,7 +3978,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
@@ -4467,7 +4467,7 @@ def update_figure_p2_с(selected_year, selected_F2, selected_S1, selected_Pr1):
 # create our callback function
 def update_figure_p3_с(selected_year, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, 400, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
@@ -4919,7 +4919,7 @@ def update_figure_p1_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
@@ -5417,7 +5417,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
@@ -5680,7 +5680,7 @@ def textarea4input(normv):
 def update_figure(selected_Ar3, selected_P2, selected_F2, selected_S1, selected_Pr1):
     # (ar3,p2,f2,s1,pr1)
     df = foo_p3_c(selected_Ar3, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей WoS(CC) за 5 лет на 1 НПР')
     fig.update_layout(
         plot_bgcolor='#515151',
@@ -6421,7 +6421,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
@@ -6887,7 +6887,7 @@ def update_figure_p2_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2):
     df = foo_p3_cv(selected_year, 50, selected_P2, 575, 25000, 195)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
@@ -7388,7 +7388,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
@@ -7848,7 +7848,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#C4F6EE',
@@ -8380,7 +8380,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
@@ -8875,7 +8875,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
@@ -9371,7 +9371,7 @@ def update_figure_p2_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p3_cv(selected_year, 50, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.3f', template='plotly',
                  title='Число высокоцитируемых статей<br>WoS(CC) за 5 лет на 1 НПР',
                  color_discrete_map={
                      '2022': '#D2FFE8',
