@@ -5486,7 +5486,7 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.2f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
                  title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#CBEECD',
@@ -8449,7 +8449,7 @@ def update_figure_p4_с(selected_year, selected_P2):
 # create our callback function
 def update_figure_p5_с(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p5_cv(selected_year, selected_Pr1, selected_S1, 300000, selected_F2, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0s', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
                  title='Объём НИОКР (без ГЗ)\nв расчете на 1 НПР',
                  color_discrete_map={
                      '2022': '#DBFFC7',
