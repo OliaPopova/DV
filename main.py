@@ -5450,7 +5450,7 @@ def update_figure_p3_с(selected_year, selected_P2, selected_F2, selected_S1, se
 # create our callback function
 def update_figure_p4_с(selected_year, selected_P2):
     df = foo_p4_cv(selected_year, 400, selected_P2)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.1f', template='plotly',
                  title='Доля исследователей до 39 лет',
                  color_discrete_map={
                      '2022': '#D2FFE8',
@@ -8272,7 +8272,7 @@ def update_figure_p4(selected_year, selected_P2, selected_F2, selected_S1, selec
 # create our callback function
 def update_figure_p6(selected_year, selected_P2, selected_F2, selected_S1, selected_Pr1):
     df = foo_p6_v(selected_year, 75000, selected_P2, selected_F2, selected_S1, selected_Pr1)
-    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.f', template='plotly',
+    fig = px.bar(data_frame=df, x='год', y='значение', color='год', text_auto='.0f', template='plotly',
                  title='Собственные затраты на ИиР на 1 НПР',
                  color_discrete_map={
                      '2022': '#9BD7E6',
